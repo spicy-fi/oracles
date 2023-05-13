@@ -1,9 +1,10 @@
 {
   "packages": {
-    "packages/price-oracle": {},
-    "packages/price-oracle-feeder": {},
+    "packages/price-oracle": {}
   },
-  "plugins": ["node-workspace"],
+  "plugins": [
+    "node-workspace"
+  ],
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true
 }
