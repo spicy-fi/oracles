@@ -1,0 +1,9 @@
+{
+  "solidity.monoRepoSupport": true,
+  "solidity.defaultCompiler": "remote",
+  "editor.formatOnSave": true,
+  "[solidity]": {
+    "editor.defaultFormatter": "JuanBlanco.solidity"
+  },
+  "solidity.formatter": "forge"
+}

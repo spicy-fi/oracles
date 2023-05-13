@@ -1,0 +1,20 @@
+{
+  "name": "@spicyfi/price-oracle",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test",
+    "test:slither": "slither .",
+    "lint": "solhint --config ./.solhint.json '**/*.sol'"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.8.3",
+    "@openzeppelin/contracts-upgradeable": "^4.8.3",
+    "@synthetixio/core-contracts": "^3.1.0",
+    "@synthetixio/oracle-manager": "^3.1.0",
+    "ds-test": "github:dapphub/ds-test",
+    "forge-std": "github:foundry-rs/forge-std",
+    "solhint": "^3.4.1",
+    "solidity-json-writer": "^1.1.0"
+  }
+}

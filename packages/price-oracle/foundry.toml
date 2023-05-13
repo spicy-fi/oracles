@@ -1,0 +1,32 @@
+[profile.default]
+solc = "0.8.18"
+libs = ["lib"]
+allow_paths = ["../../node_modules"]
+extra_output = [
+  "abi",
+  "evm.bytecode",
+  "evm.deployedBytecode",
+  "evm.methodIdentifiers",
+  "storageLayout",
+]
+extra-output-files = ["abi"]
+ffi = true
+
+[fmt]
+line_length = 80
+
+[etherscan]
+matic = { key = "${POLYGONSCAN_API_KEY}", url = "https://api.polygonscan.com/" }
+maticmum = { key = "${POLYGONSCAN_API_KEY}", url = "https://api-testnet.polygonscan.com/" }
+
+[rpc_endpoints]
+matic = "${INFURA_POLYGON_MAINNET_RPC_URL}/${INFURA_POLYGON_MAINNET_API_KEY}"
+maticmum = "${INFURA_POLYGON_MUMBAI_RPC_URL}/${INFURA_POLYGON_MUMBAI_API_KEY}"
+
+# [profile.price-oracle]
+# src = 'contracts/price-oracle/src'
+# test = 'contracts/price-oracle/test'
+# out = 'contracts/price-oracle/out'
+# ffi = true
+
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config

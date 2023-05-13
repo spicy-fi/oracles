@@ -1,12 +1,25 @@
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# General
+.DS_Store
+
 # Logs
 logs
 *.log
 npm-debug.log*
 
-# Dependency directory
+# Dependencies
 **/node_modules/**
 _node_modules
 .pnp.cjs
+package-lock.json
+yarn.lock
+
 
 # Dotenv file
 .env

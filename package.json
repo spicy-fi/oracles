@@ -1,0 +1,15 @@
+{
+  "name": "@spicyfi/oracles",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Roland Kalocsaven <roland@spicy.fi>",
+  "license": "MIT",
+  "packageManager": "pnpm@8.5.0",
+  "bugs": {
+    "url": "https://github.com/spicy-fi/oracles/issues"
+  },
+  "scripts": {
+    "build": "yarn workspaces foreach -Apvt run build",
+    "test": "yarn workspaces foreach -Apvt run test"
+  }
+}

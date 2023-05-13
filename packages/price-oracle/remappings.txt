@@ -1,0 +1,10 @@
+
+src/=src/
+test/=test/
+ds-test/=node_modules/ds-test/src/
+forge-std/=node_modules/forge-std/src/
+solidity-json-writer/=node_modules/solidity-json-writer/contracts/
+@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/
+@openzeppelin/contracts-upgradeable/=node_modules/@openzeppelin/contracts-upgradeable/
+@synthetixio/oracle-manager/=node_modules/@synthetixio/oracle-manager/
+@synthetixio/core-contracts/=node_modules/@synthetixio/core-contracts/

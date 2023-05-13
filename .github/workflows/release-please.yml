@@ -1,0 +1,19 @@
+name: release-please
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-releases:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛠️ Create Releases
+        uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          token: ${{ secrets.RELEASE_PLEASE_ACCESS_TOKEN }}
+          command: manifest
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
