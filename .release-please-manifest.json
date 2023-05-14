@@ -1,3 +1,4 @@
 {
-  "packages/price-oracle": "0.0.1"
+  "packages/price-oracle": "0.0.1",
+  "packages/price-oracle-feeder": "0.0.1"
 }

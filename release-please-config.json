@@ -1,6 +1,7 @@
 {
   "packages": {
-    "packages/price-oracle": {}
+    "packages/price-oracle": {},
+    "packages/price-oracle-feeder": {}
   },
   "plugins": [
     "node-workspace"
