@@ -17,10 +17,10 @@ import {NodeOutput} from
 /**
  * @title PriceOracle
  * @notice A simple price oracle that stores prices for asset pairs.
- * @dev This contract is meant to be used with the OracleManager contract from Synthetix.
+ * @dev This contract is meant to be updated manually and used with the OracleManager contract from Synthetix.
  */
 contract PriceOracle is OwnableUpgradeable, UUPSUpgradeable, IExternalNode {
-    event UpdatedAssetPairPrices(AssetPairPrice[] assetPairPrices);
+    event AssetPairPricesUpdated(AssetPairPrice[] assetPairPrices);
 
     struct AssetPairPrice {
         bytes32 id;
@@ -50,7 +50,7 @@ contract PriceOracle is OwnableUpgradeable, UUPSUpgradeable, IExternalNode {
             _assetPairPrices[assetPairPrices[i].id] = assetPairPrices[i];
         }
 
-        emit UpdatedAssetPairPrices(assetPairPrices);
+        emit AssetPairPricesUpdated(assetPairPrices);
     }
 
     function process(

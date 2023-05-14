@@ -4,12 +4,10 @@ pragma solidity ^0.8.18;
 // solhint-disable no-console
 // solhint-disable-next-line no-global-import
 import "./utils/ScriptPlus.sol";
-
-import {LibAddressCache} from "./utils/LibAddressCache.sol";
 import {PriceOracle} from "src/PriceOracle.sol";
 import {PriceOracleProxy} from "src/PriceOracleProxy.sol";
 
-contract DeployPriceOracle is ScriptPlus {
+contract Deploy is ScriptPlus {
     address private _priceOracleProxyAddress;
     address private _priceOracleImplementationAddress;
 
@@ -27,7 +25,9 @@ contract DeployPriceOracle is ScriptPlus {
         // solhint-disable-next-line avoid-tx-origin
         console2.log("TX Origin:", tx.origin);
 
-        if (newProxy == true) {
+        _priceOracleProxyAddress = _getPriceOracleProxyAddressFromEnv();
+
+        if (newProxy == true || _priceOracleProxyAddress == address(0)) {
             (_priceOracleProxyAddress, _priceOracleImplementationAddress) =
                 _deployPriceOracleWithProxy();
 
@@ -40,15 +40,10 @@ contract DeployPriceOracle is ScriptPlus {
 
             _initPriceOracle(_priceOracleProxyAddress);
 
-            LibAddressCache.add("PriceOracle", _priceOracleProxyAddress);
             console2.log(
                 "New PriceOracle Proxy Address:", _priceOracleProxyAddress
             );
         } else {
-            _priceOracleProxyAddress = LibAddressCache.getByKey(
-                LibAddressCache.generateKey(block.chainid, "PriceOracle")
-            );
-
             _priceOracleImplementationAddress =
                 _deployPriceOracleForProxy(_priceOracleProxyAddress);
 
@@ -68,6 +63,23 @@ contract DeployPriceOracle is ScriptPlus {
         );
 
         vm.stopBroadcast();
+    }
+
+    function _getPriceOracleProxyAddressFromEnv()
+        internal
+        returns (address priceOracleProxyAddress)
+    {
+        priceOracleProxyAddress = vm.envOr("LOCAL_PROXY_ADDRESS", address(0));
+
+        if (block.chainid == 80001) {
+            priceOracleProxyAddress =
+                vm.envOr("POLYGON_MUMBAI_PROXY_ADDRESS", address(0));
+        }
+
+        if (block.chainid == 137) {
+            priceOracleProxyAddress =
+                vm.envOr("POLYGON_MAINNET_PROXY_ADDRESS", address(0));
+        }
     }
 
     /// @notice deploys a price oracle contract

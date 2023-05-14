@@ -5,7 +5,7 @@ import {AbstractTest} from "test/utils/AbstractTest.sol";
 import {PriceOracle} from "src/PriceOracle.sol";
 
 contract UpdateAssetPairPricesTest is AbstractTest {
-    event UpdatedAssetPairPrices(PriceOracle.AssetPairPrice[] assetPairPrices);
+    event AssetPairPricesUpdated(PriceOracle.AssetPairPrice[] assetPairPrices);
 
     address private _priceOracleAddress;
 
@@ -101,7 +101,7 @@ contract UpdateAssetPairPricesTest is AbstractTest {
         public
     {
         vm.expectEmit(true, true, false, true);
-        emit UpdatedAssetPairPrices(_assetPairPrices);
+        emit AssetPairPricesUpdated(_assetPairPrices);
 
         vm.prank(_owner);
         PriceOracle(_priceOracleAddress).updateAssetPairPrices(_assetPairPrices);
