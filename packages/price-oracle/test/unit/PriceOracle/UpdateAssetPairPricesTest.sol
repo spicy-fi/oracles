@@ -10,12 +10,14 @@ contract UpdateAssetPairPricesTest is AbstractTest {
     address private _priceOracleAddress;
 
     PriceOracle.AssetPairPrice[] private _assetPairPrices;
-    bytes32 private _expectedAssetPairId = bytes32(abi.encodePacked("USDT/USD"));
+    bytes32 private _expectedAssetPairId = bytes32(uint256(4));
     int256 private _expectedAssetPairPrice = 12e18;
-    uint256 private _expectedAssetPairTimestamp = 1666668;
+    uint256 private _expectedAssetPairTimestamp = 1685795882;
 
     function setUp() public override {
         super.setUp();
+
+        vm.warp(_expectedAssetPairTimestamp);
 
         _priceOracleAddress = address(new PriceOracle());
 
@@ -26,11 +28,15 @@ contract UpdateAssetPairPricesTest is AbstractTest {
         );
 
         _assetPairPrices.push(
-            PriceOracle.AssetPairPrice(bytes32(uint256(0)), 10e18, 1666666)
+            PriceOracle.AssetPairPrice(
+                bytes32(uint256(1)), 10e18, _expectedAssetPairTimestamp
+            )
         );
 
         _assetPairPrices.push(
-            PriceOracle.AssetPairPrice(bytes32(uint256(1)), 11e18, 1666667)
+            PriceOracle.AssetPairPrice(
+                bytes32(uint256(2)), 11e18, _expectedAssetPairTimestamp
+            )
         );
         _assetPairPrices.push(
             PriceOracle.AssetPairPrice(
@@ -39,6 +45,63 @@ contract UpdateAssetPairPricesTest is AbstractTest {
                 _expectedAssetPairTimestamp
             )
         );
+    }
+
+    function testUpdateAssetPairPricesShouldRevertIfInvalidIdInAssetPairPrices()
+        public
+    {
+        PriceOracle.AssetPairPrice memory invalidAssetPairPrice = PriceOracle
+            .AssetPairPrice(bytes32(uint256(0)), 11e18, _expectedAssetPairTimestamp);
+
+        _assetPairPrices.push(invalidAssetPairPrice);
+
+        vm.expectRevert(
+            abi.encodeWithSelector(
+                PriceOracle.InvalidAssetPairPrice.selector,
+                invalidAssetPairPrice
+            )
+        );
+
+        vm.prank(_owner);
+        PriceOracle(_priceOracleAddress).updateAssetPairPrices(_assetPairPrices);
+    }
+
+    function testUpdateAssetPairPricesShouldRevertIfInvalidPriceInAssetPairPrices(
+    ) public {
+        PriceOracle.AssetPairPrice memory invalidAssetPairPrice = PriceOracle
+            .AssetPairPrice(bytes32(uint256(99)), 0, _expectedAssetPairTimestamp);
+
+        _assetPairPrices.push(invalidAssetPairPrice);
+
+        vm.expectRevert(
+            abi.encodeWithSelector(
+                PriceOracle.InvalidAssetPairPrice.selector,
+                invalidAssetPairPrice
+            )
+        );
+
+        vm.prank(_owner);
+        PriceOracle(_priceOracleAddress).updateAssetPairPrices(_assetPairPrices);
+    }
+
+    function testUpdateAssetPairPricesShouldRevertIfInvalidTimestampInAssetPairPrices(
+    ) public {
+        PriceOracle.AssetPairPrice memory invalidAssetPairPrice = PriceOracle
+            .AssetPairPrice(
+            bytes32(uint256(99)), 10e18, _expectedAssetPairTimestamp - 3 hours
+        );
+
+        _assetPairPrices.push(invalidAssetPairPrice);
+
+        vm.expectRevert(
+            abi.encodeWithSelector(
+                PriceOracle.InvalidAssetPairPrice.selector,
+                invalidAssetPairPrice
+            )
+        );
+
+        vm.prank(_owner);
+        PriceOracle(_priceOracleAddress).updateAssetPairPrices(_assetPairPrices);
     }
 
     function testUpdateAssetPairPricesShouldRevertIfNotTheOwner() public {

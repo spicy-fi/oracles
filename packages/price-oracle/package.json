@@ -4,7 +4,7 @@
   "scripts": {
     "build": "forge build",
     "test": "forge test",
-    "test:slither": "slither .",
+    "test:slither": "slither . --triage-mode",
     "lint": "solhint --config ./.solhint.json '**/*.sol'",
     "deploy:mainnet": "make deploy-mainnet newProxy=false",
     "deploy:mainnet:new": "make deploy-mainnet newProxy=true",
@@ -14,10 +14,10 @@
     "deploy:local:new": "make deploy-local newProxy=true"
   },
   "devDependencies": {
-    "@openzeppelin/contracts": "^4.8.3",
-    "@openzeppelin/contracts-upgradeable": "^4.8.3",
-    "@synthetixio/core-contracts": "^3.1.0",
-    "@synthetixio/oracle-manager": "^3.1.0",
+    "@openzeppelin/contracts": "^4.9.0",
+    "@openzeppelin/contracts-upgradeable": "^4.9.0",
+    "@synthetixio/core-contracts": "^3.1.1",
+    "@synthetixio/oracle-manager": "^3.1.1",
     "ds-test": "github:dapphub/ds-test",
     "forge-std": "github:foundry-rs/forge-std",
     "solhint": "^3.4.1"

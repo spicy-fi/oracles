@@ -10,7 +10,7 @@ newProxy=false
 # deployment
 deploy-mainnet :; @forge script Deploy \
 				-s "run(bool)" ${newProxy} \
-				--rpc-url ${INFURA_POLYGON_MAINNET_RPC_URL}${INFURA_POLYGON_MAINNET_API_KEY} \
+				--rpc-url ${POLYGON_MAINNET_RPC_URL} \
 				--chain-id 137 \
 				-i 1 \
 				--broadcast \
@@ -20,14 +20,14 @@ deploy-mainnet :; @forge script Deploy \
 
 deploy-mumbai :; forge script Deploy \
 				-s "run(bool)" ${newProxy} \
-				--rpc-url ${INFURA_POLYGON_MUMBAI_RPC_URL}${INFURA_POLYGON_MUMBAI_API_KEY} \
+				--rpc-url ${POLYGON_MUMBAI_RPC_URL} \
 				--chain-id 80001 \
 				-i 1 \
 				--broadcast \
 				--ffi \
 				-vvvvv
 
-deploy-local :; forge script DeploySpicyOracle \
+deploy-local :; forge script Deploy \
 				-s "run(bool)" ${newProxy} \
 				--rpc-url ${LOCAL_RPC_URL} \
 				-i 1 \

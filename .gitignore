@@ -18,7 +18,7 @@ lerna-debug.log*
 
 # Dependencies
 **/node_modules/**
-_node_modules
+node_modules
 .pnp.cjs
 package-lock.json
 yarn.lock

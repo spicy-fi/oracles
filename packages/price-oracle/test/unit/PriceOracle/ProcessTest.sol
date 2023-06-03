@@ -10,12 +10,14 @@ contract ProcessTest is AbstractTest {
     address private _priceOracleAddress;
 
     PriceOracle.AssetPairPrice[] private _expectedAssetPairPrices;
-    bytes32 private _expectedAssetPairId = bytes32(abi.encodePacked("USDT/USD"));
+    bytes32 private _expectedAssetPairId = bytes32(uint256(4));
     int256 private _expectedAssetPairPrice = 12e18;
-    uint256 private _expectedAssetPairTimestamp = 1666668;
+    uint256 private _expectedAssetPairTimestamp = 1685795882;
 
     function setUp() public override {
         super.setUp();
+
+        vm.warp(_expectedAssetPairTimestamp);
 
         _priceOracleAddress = address(new PriceOracle());
 
@@ -26,11 +28,15 @@ contract ProcessTest is AbstractTest {
         );
 
         _expectedAssetPairPrices.push(
-            PriceOracle.AssetPairPrice(bytes32(uint256(0)), 10e18, 1666666)
+            PriceOracle.AssetPairPrice(
+                bytes32(uint256(1)), 10e18, _expectedAssetPairTimestamp
+            )
         );
 
         _expectedAssetPairPrices.push(
-            PriceOracle.AssetPairPrice(bytes32(uint256(1)), 11e18, 1666667)
+            PriceOracle.AssetPairPrice(
+                bytes32(uint256(2)), 11e18, _expectedAssetPairTimestamp
+            )
         );
         _expectedAssetPairPrices.push(
             PriceOracle.AssetPairPrice(

@@ -10,5 +10,5 @@ out/
 # Docs
 docs/
 
-# Cache
-.addressCache
+# Environment Variables
+.env
