@@ -67,18 +67,22 @@ contract Deploy is ScriptPlus {
 
     function _getPriceOracleProxyAddressFromEnv()
         internal
+        view
         returns (address priceOracleProxyAddress)
     {
-        priceOracleProxyAddress = vm.envOr("LOCAL_PROXY_ADDRESS", address(0));
+        priceOracleProxyAddress =
+            address(bytes20(bytes(vm.envString("LOCAL_PROXY_ADDRESS"))));
 
         if (block.chainid == 80001) {
-            priceOracleProxyAddress =
-                vm.envOr("POLYGON_MUMBAI_PROXY_ADDRESS", address(0));
+            priceOracleProxyAddress = address(
+                bytes20(bytes(vm.envString("POLYGON_MUMBAI_PROXY_ADDRESS")))
+            );
         }
 
         if (block.chainid == 137) {
-            priceOracleProxyAddress =
-                vm.envOr("POLYGON_MAINNET_PROXY_ADDRESS", address(0));
+            priceOracleProxyAddress = address(
+                bytes20(bytes(vm.envString("POLYGON_MAINNET_PROXY_ADDRESS")))
+            );
         }
     }
 

@@ -17,5 +17,9 @@ abstract contract ScriptPlus is Script {
         if (block.chainid == 137) {
             _owner = vm.envAddress("POLYGON_MAINNET_OWNER_ADDRESS");
         }
+
+        require(_owner != address(0), "_owner must be a non-zero address");
+
+        vm.label(_owner, "owner");
     }
 }
