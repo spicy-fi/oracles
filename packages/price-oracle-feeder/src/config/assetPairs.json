@@ -1,0 +1,367 @@
+[
+  {
+    "id": 1,
+    "base": "bitcoin",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 2,
+    "base": "ethereum",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 3,
+    "base": "binance-coin",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 4,
+    "base": "tether",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 5,
+    "base": "cardano",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 6,
+    "base": "dogecoin",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 7,
+    "base": "xrp",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 8,
+    "base": "polkadot",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 9,
+    "base": "usd-coin",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 10,
+    "base": "uniswap",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 11,
+    "base": "internet-computer",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 12,
+    "base": "chainlink",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 13,
+    "base": "bitcoin-cash",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 14,
+    "base": "litecoin",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 15,
+    "base": "polygon",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 16,
+    "base": "stellar",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 17,
+    "base": "solana",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 18,
+    "base": "vechain",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 19,
+    "base": "ethereum-classic",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 20,
+    "base": "theta-network",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 21,
+    "base": "eos",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 22,
+    "base": "tron",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 23,
+    "base": "filecoin",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 24,
+    "base": "aave",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 25,
+    "base": "monero",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 26,
+    "base": "pancakeswap",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 27,
+    "base": "neo",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 28,
+    "base": "maker",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 29,
+    "base": "iota",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 30,
+    "base": "klaytn",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 31,
+    "base": "tezos",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 32,
+    "base": "kusama",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 33,
+    "base": "cosmos",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 34,
+    "base": "terra",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 35,
+    "base": "algorand",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 36,
+    "base": "thorchain",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 37,
+    "base": "compound",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 38,
+    "base": "decred",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 39,
+    "base": "dash",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 40,
+    "base": "hedera",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 41,
+    "base": "zcash",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 42,
+    "base": "chiliz",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 43,
+    "base": "sushiswap",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 44,
+    "base": "holo",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 45,
+    "base": "decentraland",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 46,
+    "base": "enjin-coin",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 47,
+    "base": "helium",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 48,
+    "base": "qtum",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 49,
+    "base": "avalanche",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 50,
+    "base": "the-sandbox",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 51,
+    "base": "pax-gold",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 52,
+    "base": "gala",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 53,
+    "base": "shiba-inu",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 54,
+    "base": "loopring",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 55,
+    "base": "audius",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 56,
+    "base": "basic-attention-token",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 57,
+    "base": "mina",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 58,
+    "base": "fantom",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 59,
+    "base": "multiversx",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 60,
+    "base": "ren",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 61,
+    "base": "curve-dao-token",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 62,
+    "base": "axie-infinity",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 63,
+    "base": "kyber-network-crystal",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 64,
+    "base": "quant",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 65,
+    "base": "ethereum-name-service",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 66,
+    "base": "ftx-token",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 67,
+    "base": "optimism",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 68,
+    "base": "flux",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 69,
+    "base": "immutable",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 70,
+    "base": "illuvium",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 71,
+    "base": "casper",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 72,
+    "base": "aptos",
+    "quote": "united-states-dollar"
+  },
+  {
+    "id": 73,
+    "base": "apecoin",
+    "quote": "united-states-dollar"
+  }
+]

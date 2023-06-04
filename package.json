@@ -11,8 +11,6 @@
   "scripts": {
     "build": "yarn workspaces foreach -Apvt run build",
     "test": "yarn workspaces foreach -Apvt run test",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
     "prepare": "husky install"
   },
   "devDependencies": {
