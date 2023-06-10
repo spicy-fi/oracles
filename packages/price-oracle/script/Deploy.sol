@@ -6,6 +6,8 @@ pragma solidity ^0.8.18;
 import "./utils/ScriptPlus.sol";
 import {PriceOracle} from "src/PriceOracle.sol";
 import {PriceOracleProxy} from "src/PriceOracleProxy.sol";
+import {AssetSeeder} from "./seeders/AssetSeeder.sol";
+import {AssetPairSeeder} from "./seeders/AssetPairSeeder.sol";
 
 contract Deploy is ScriptPlus {
     address private _priceOracleProxyAddress;
@@ -14,8 +16,9 @@ contract Deploy is ScriptPlus {
     /**
      * @notice deploy a price oracle contract
      * @param newProxy if true, deploy a new proxy, otherwise use the existing proxy
+     * @param seed if true, it seeds the deployed price oracle with data
      */
-    function run(bool newProxy) public {
+    function run(bool newProxy, bool seed) public {
         console2.log("Deploy Contract Address:", address(this));
 
         vm.startBroadcast(_owner);
@@ -62,26 +65,30 @@ contract Deploy is ScriptPlus {
             _priceOracleImplementationAddress
         );
 
+        if (seed) {
+            AssetSeeder.seed(_priceOracleProxyAddress);
+            AssetPairSeeder.seed(_priceOracleProxyAddress);
+        }
+
         vm.stopBroadcast();
     }
 
     function _getPriceOracleProxyAddressFromEnv()
         internal
-        view
         returns (address priceOracleProxyAddress)
     {
         priceOracleProxyAddress =
-            address(bytes20(bytes(vm.envString("LOCAL_PROXY_ADDRESS"))));
+            vm.envOr("LOCAL_SPICY_PRICE_ORACLE_PROXY_ADDRESS", address(0));
 
         if (block.chainid == 80001) {
-            priceOracleProxyAddress = address(
-                bytes20(bytes(vm.envString("POLYGON_MUMBAI_PROXY_ADDRESS")))
+            priceOracleProxyAddress = vm.envOr(
+                "POLYGON_MUMBAI_SPICY_PRICE_ORACLE_PROXY_ADDRESS", address(0)
             );
         }
 
         if (block.chainid == 137) {
-            priceOracleProxyAddress = address(
-                bytes20(bytes(vm.envString("POLYGON_MAINNET_PROXY_ADDRESS")))
+            priceOracleProxyAddress = vm.envOr(
+                "POLYGON_MAINNET_SPICY_PRICE_ORACLE_PROXY_ADDRESS", address(0)
             );
         }
     }

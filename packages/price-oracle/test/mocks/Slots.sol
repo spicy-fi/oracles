@@ -95,17 +95,15 @@ abstract contract Slots {
         pure
         returns (bytes32 slot)
     {
-        if (
-            a1 == bytes32("id") && _eq(a3, "_assetPairPrices")
-                && _eq(a4, "PriceOracle")
-        ) {
+        if (a1 == bytes32("id") && _eq(a3, "_assets") && _eq(a4, "PriceOracle"))
+        {
             slot = _slotOfSlot(
                 uint256(0), _slotOfKeyOfSlot(a2, _slotOfStorage(201, a4))
             );
         }
 
         if (
-            a1 == bytes32("price") && _eq(a3, "_assetPairPrices")
+            a1 == bytes32("name") && _eq(a3, "_assets")
                 && _eq(a4, "PriceOracle")
         ) {
             slot = _slotOfSlot(
@@ -114,11 +112,56 @@ abstract contract Slots {
         }
 
         if (
-            a1 == bytes32("timestamp") && _eq(a3, "_assetPairPrices")
+            a1 == bytes32("symbol") && _eq(a3, "_assets")
                 && _eq(a4, "PriceOracle")
         ) {
             slot = _slotOfSlot(
                 uint256(2), _slotOfKeyOfSlot(a2, _slotOfStorage(201, a4))
+            );
+        }
+
+        if (
+            a1 == bytes32("id") && _eq(a3, "_assetPairs")
+                && _eq(a4, "PriceOracle")
+        ) {
+            slot = _slotOfSlot(
+                uint256(0), _slotOfKeyOfSlot(a2, _slotOfStorage(202, a4))
+            );
+        }
+
+        if (
+            a1 == bytes32("baseAssetId") && _eq(a3, "_assetPairs")
+                && _eq(a4, "PriceOracle")
+        ) {
+            slot = _slotOfSlot(
+                uint256(1), _slotOfKeyOfSlot(a2, _slotOfStorage(202, a4))
+            );
+        }
+
+        if (
+            a1 == bytes32("quoteAssetId") && _eq(a3, "_assetPairs")
+                && _eq(a4, "PriceOracle")
+        ) {
+            slot = _slotOfSlot(
+                uint256(2), _slotOfKeyOfSlot(a2, _slotOfStorage(202, a4))
+            );
+        }
+
+        if (
+            a1 == bytes32("price") && _eq(a3, "_assetPairs")
+                && _eq(a4, "PriceOracle")
+        ) {
+            slot = _slotOfSlot(
+                uint256(3), _slotOfKeyOfSlot(a2, _slotOfStorage(202, a4))
+            );
+        }
+
+        if (
+            a1 == bytes32("timestamp") && _eq(a3, "_assetPairs")
+                && _eq(a4, "PriceOracle")
+        ) {
+            slot = _slotOfSlot(
+                uint256(4), _slotOfKeyOfSlot(a2, _slotOfStorage(202, a4))
             );
         }
     }

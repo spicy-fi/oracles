@@ -6,16 +6,13 @@
     "test": "forge test",
     "test:slither": "slither . --triage-mode",
     "lint": "solhint --config ./.solhint.json '**/*.sol'",
-    "deploy:mainnet": "make deploy-mainnet newProxy=false",
-    "deploy:mainnet:new": "make deploy-mainnet newProxy=true",
-    "deploy:mumbai": "make deploy-mumbai newProxy=false",
-    "deploy:mumbai:new": "make deploy-mumbai newProxy=true",
-    "deploy:local": "make deploy-local newProxy=false",
-    "deploy:local:new": "make deploy-local newProxy=true"
+    "deploy:mainnet": "make deploy-mainnet",
+    "deploy:mumbai": "make deploy-mumbai",
+    "deploy:local": "make deploy-local"
   },
   "devDependencies": {
-    "@openzeppelin/contracts": "^4.9.0",
-    "@openzeppelin/contracts-upgradeable": "^4.9.0",
+    "@openzeppelin/contracts": "^4.9.1",
+    "@openzeppelin/contracts-upgradeable": "^4.9.1",
     "@synthetixio/core-contracts": "^3.1.1",
     "@synthetixio/oracle-manager": "^3.1.1",
     "ds-test": "github:dapphub/ds-test",

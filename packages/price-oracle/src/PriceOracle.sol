@@ -23,9 +23,28 @@ contract PriceOracle is
     UUPSUpgradeable,
     IExternalNode
 {
+    error InvalidAsset(Asset asset);
+    error InvalidAssetPair(AssetPair assetPair);
     error InvalidAssetPairPrice(AssetPairPrice assetPairPrice);
+    error AssetPairDoesNotExist(bytes32 assetPairId);
 
+    event AssetsUpdated(Asset[] assets);
+    event AssetPairsUpdated(AssetPair[] assetPairs);
     event AssetPairPricesUpdated(AssetPairPrice[] assetPairPrices);
+
+    struct Asset {
+        bytes32 id;
+        bytes32 name;
+        bytes32 symbol;
+    }
+
+    struct AssetPair {
+        bytes32 id;
+        bytes32 baseAssetId;
+        bytes32 quoteAssetId;
+        int256 price;
+        uint256 timestamp;
+    }
 
     struct AssetPairPrice {
         bytes32 id;
@@ -33,7 +52,8 @@ contract PriceOracle is
         uint256 timestamp;
     }
 
-    mapping(bytes32 => AssetPairPrice) private _assetPairPrices;
+    mapping(bytes32 => Asset) private _assets;
+    mapping(bytes32 => AssetPair) private _assetPairs;
 
     constructor() {
         _disableInitializers();
@@ -46,6 +66,41 @@ contract PriceOracle is
 
     // solhint-disable-next-line no-empty-blocks
     function _authorizeUpgrade(address) internal override onlyOwner {}
+
+    function updateAssets(Asset[] calldata assets) external onlyOwner {
+        for (uint256 i = 0; i < assets.length; i++) {
+            if (
+                assets[i].id == 0 || assets[i].name == 0
+                    || assets[i].symbol == 0
+            ) {
+                revert InvalidAsset(assets[i]);
+            }
+
+            _assets[assets[i].id] = assets[i];
+        }
+
+        emit AssetsUpdated(assets);
+    }
+
+    function updateAssetPairs(AssetPair[] calldata assetPairs)
+        external
+        onlyOwner
+    {
+        for (uint256 i = 0; i < assetPairs.length; i++) {
+            if (
+                assetPairs[i].id == 0 || assetPairs[i].baseAssetId == 0
+                    || assetPairs[i].quoteAssetId == 0
+                    || _assets[assetPairs[i].baseAssetId].id == 0
+                    || _assets[assetPairs[i].quoteAssetId].id == 0
+            ) {
+                revert InvalidAssetPair(assetPairs[i]);
+            }
+
+            _assetPairs[assetPairs[i].id] = assetPairs[i];
+        }
+
+        emit AssetPairsUpdated(assetPairs);
+    }
 
     /// @dev Updates the price for a list of asset pairs. Can only be called by the contract owner.
     /// @param assetPairPrices The list of new asset pair prices to update.
@@ -71,7 +126,13 @@ contract PriceOracle is
                 revert InvalidAssetPairPrice(assetPairPrices[i]);
             }
 
-            _assetPairPrices[assetPairPrices[i].id] = assetPairPrices[i];
+            if (_assetPairs[assetPairPrices[i].id].id == 0) {
+                revert AssetPairDoesNotExist(assetPairPrices[i].id);
+            }
+
+            _assetPairs[assetPairPrices[i].id].price = assetPairPrices[i].price;
+            _assetPairs[assetPairPrices[i].id].timestamp =
+                assetPairPrices[i].timestamp;
         }
 
         emit AssetPairPricesUpdated(assetPairPrices);
@@ -87,7 +148,7 @@ contract PriceOracle is
         (, bytes32 id) = abi.decode(parameters, (address, bytes32));
 
         return NodeOutput.Data(
-            _assetPairPrices[id].price, _assetPairPrices[id].timestamp, 0, 0
+            _assetPairs[id].price, _assetPairs[id].timestamp, 0, 0
         );
     }
 
@@ -110,7 +171,7 @@ contract PriceOracle is
         (, bytes32 id) =
             abi.decode(nodeDefinition.parameters, (address, bytes32));
 
-        if (_assetPairPrices[id].id == 0) {
+        if (_assetPairs[id].id == 0) {
             return false;
         }
 

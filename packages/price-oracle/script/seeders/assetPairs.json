@@ -1,0 +1,367 @@
+[
+  {
+    "id": 1,
+    "baseAssetId": "bitcoin",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 2,
+    "baseAssetId": "ethereum",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 3,
+    "baseAssetId": "binance-coin",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 4,
+    "baseAssetId": "tether",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 5,
+    "baseAssetId": "cardano",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 6,
+    "baseAssetId": "dogecoin",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 7,
+    "baseAssetId": "xrp",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 8,
+    "baseAssetId": "polkadot",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 9,
+    "baseAssetId": "usd-coin",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 10,
+    "baseAssetId": "uniswap",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 11,
+    "baseAssetId": "internet-computer",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 12,
+    "baseAssetId": "chainlink",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 13,
+    "baseAssetId": "bitcoin-cash",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 14,
+    "baseAssetId": "litecoin",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 15,
+    "baseAssetId": "polygon",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 16,
+    "baseAssetId": "stellar",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 17,
+    "baseAssetId": "solana",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 18,
+    "baseAssetId": "vechain",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 19,
+    "baseAssetId": "ethereum-classic",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 20,
+    "baseAssetId": "theta-network",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 21,
+    "baseAssetId": "eos",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 22,
+    "baseAssetId": "tron",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 23,
+    "baseAssetId": "filecoin",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 24,
+    "baseAssetId": "aave",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 25,
+    "baseAssetId": "monero",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 26,
+    "baseAssetId": "pancakeswap",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 27,
+    "baseAssetId": "neo",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 28,
+    "baseAssetId": "maker",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 29,
+    "baseAssetId": "iota",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 30,
+    "baseAssetId": "klaytn",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 31,
+    "baseAssetId": "tezos",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 32,
+    "baseAssetId": "kusama",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 33,
+    "baseAssetId": "cosmos",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 34,
+    "baseAssetId": "terra",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 35,
+    "baseAssetId": "algorand",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 36,
+    "baseAssetId": "thorchain",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 37,
+    "baseAssetId": "compound",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 38,
+    "baseAssetId": "decred",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 39,
+    "baseAssetId": "dash",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 40,
+    "baseAssetId": "hedera",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 41,
+    "baseAssetId": "zcash",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 42,
+    "baseAssetId": "chiliz",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 43,
+    "baseAssetId": "sushiswap",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 44,
+    "baseAssetId": "holo",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 45,
+    "baseAssetId": "decentraland",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 46,
+    "baseAssetId": "enjin-coin",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 47,
+    "baseAssetId": "helium",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 48,
+    "baseAssetId": "qtum",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 49,
+    "baseAssetId": "avalanche",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 50,
+    "baseAssetId": "the-sandbox",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 51,
+    "baseAssetId": "pax-gold",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 52,
+    "baseAssetId": "gala",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 53,
+    "baseAssetId": "shiba-inu",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 54,
+    "baseAssetId": "loopring",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 55,
+    "baseAssetId": "audius",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 56,
+    "baseAssetId": "basic-attention-token",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 57,
+    "baseAssetId": "mina",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 58,
+    "baseAssetId": "fantom",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 59,
+    "baseAssetId": "multiversx",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 60,
+    "baseAssetId": "ren",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 61,
+    "baseAssetId": "curve-dao-token",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 62,
+    "baseAssetId": "axie-infinity",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 63,
+    "baseAssetId": "kyber-network-crystal",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 64,
+    "baseAssetId": "quant",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 65,
+    "baseAssetId": "ethereum-name-service",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 66,
+    "baseAssetId": "ftx-token",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 67,
+    "baseAssetId": "optimism",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 68,
+    "baseAssetId": "flux",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 69,
+    "baseAssetId": "immutable",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 70,
+    "baseAssetId": "illuvium",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 71,
+    "baseAssetId": "casper",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 72,
+    "baseAssetId": "aptos",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 73,
+    "baseAssetId": "apecoin",
+    "quoteAssetId": "united-states-dollar"
+  }
+]

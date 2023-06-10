@@ -8,17 +8,20 @@ abstract contract ScriptPlus is Script {
     address internal _owner;
 
     constructor() {
-        _owner = vm.envAddress("LOCAL_OWNER_ADDRESS");
+        _owner = vm.envAddress("LOCAL_SPICY_PRICE_ORACLE_OWNER_ADDRESS");
 
         if (block.chainid == 80001) {
-            _owner = vm.envAddress("POLYGON_MUMBAI_OWNER_ADDRESS");
+            _owner =
+                vm.envAddress("POLYGON_MUMBAI_SPICY_PRICE_ORACLE_OWNER_ADDRESS");
         }
 
         if (block.chainid == 137) {
-            _owner = vm.envAddress("POLYGON_MAINNET_OWNER_ADDRESS");
+            _owner = vm.envAddress(
+                "POLYGON_MAINNET_SPICY_PRICE_ORACLE_OWNER_ADDRESS"
+            );
         }
 
-        require(_owner != address(0), "_owner must be a non-zero address");
+        require(_owner != address(0), "_owner mustn't be zero");
 
         vm.label(_owner, "owner");
     }

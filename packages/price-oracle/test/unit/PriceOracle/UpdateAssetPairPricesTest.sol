@@ -9,8 +9,10 @@ contract UpdateAssetPairPricesTest is AbstractTest {
 
     address private _priceOracleAddress;
 
+    PriceOracle.Asset[] private _assets;
+    PriceOracle.AssetPair[] private _assetPairs;
     PriceOracle.AssetPairPrice[] private _assetPairPrices;
-    bytes32 private _expectedAssetPairId = bytes32(uint256(4));
+    bytes32 private _expectedAssetPairId = bytes32(uint256(3));
     int256 private _expectedAssetPairPrice = 12e18;
     uint256 private _expectedAssetPairTimestamp = 1685795882;
 
@@ -25,6 +27,62 @@ contract UpdateAssetPairPricesTest is AbstractTest {
             _priceOracleAddress,
             _slotOf("_owner", "PriceOracle"),
             bytes32(abi.encode(_owner))
+        );
+
+        _assets.push(
+            PriceOracle.Asset(
+                bytes32("united-states-dollar"),
+                bytes32("United States Dollar"),
+                bytes32("USD")
+            )
+        );
+
+        _assets.push(
+            PriceOracle.Asset(
+                bytes32("bitcoin"), bytes32("Bitcoin"), bytes32("BTC")
+            )
+        );
+
+        _assets.push(
+            PriceOracle.Asset(
+                bytes32("ethereum"), bytes32("Ethereum"), bytes32("ETH")
+            )
+        );
+
+        _assets.push(
+            PriceOracle.Asset(
+                bytes32("binance-coin"), bytes32("Binance Coin"), bytes32("BNB")
+            )
+        );
+
+        _assetPairs.push(
+            PriceOracle.AssetPair(
+                bytes32(uint256(1)),
+                bytes32("bitcoin"),
+                bytes32("united-states-dollar"),
+                0,
+                0
+            )
+        );
+
+        _assetPairs.push(
+            PriceOracle.AssetPair(
+                bytes32(uint256(2)),
+                bytes32("ethereum"),
+                bytes32("united-states-dollar"),
+                0,
+                0
+            )
+        );
+
+        _assetPairs.push(
+            PriceOracle.AssetPair(
+                _expectedAssetPairId,
+                bytes32("binance-coin"),
+                bytes32("united-states-dollar"),
+                0,
+                0
+            )
         );
 
         _assetPairPrices.push(
@@ -47,7 +105,7 @@ contract UpdateAssetPairPricesTest is AbstractTest {
         );
     }
 
-    function testUpdateAssetPairPricesShouldRevertIfInvalidIdInAssetPairPrices()
+    function testUpdateAssetPairPricesShouldRevertIfZeroIdInAssetPairPrices()
         public
     {
         PriceOracle.AssetPairPrice memory invalidAssetPairPrice = PriceOracle
@@ -55,23 +113,53 @@ contract UpdateAssetPairPricesTest is AbstractTest {
 
         _assetPairPrices.push(invalidAssetPairPrice);
 
+        vm.startPrank(_owner);
+        PriceOracle(_priceOracleAddress).updateAssets(_assets);
+        PriceOracle(_priceOracleAddress).updateAssetPairs(_assetPairs);
+
         vm.expectRevert(
             abi.encodeWithSelector(
                 PriceOracle.InvalidAssetPairPrice.selector,
                 invalidAssetPairPrice
             )
         );
-
-        vm.prank(_owner);
         PriceOracle(_priceOracleAddress).updateAssetPairPrices(_assetPairPrices);
+        vm.stopPrank();
+    }
+
+    function testUpdateAssetPairPricesShouldRevertIfNonExistingIdInAssetPairPrices(
+    ) public {
+        PriceOracle.AssetPairPrice memory invalidAssetPairPrice = PriceOracle
+            .AssetPairPrice(
+            bytes32(uint256(99)), 11e18, _expectedAssetPairTimestamp
+        );
+
+        _assetPairPrices.push(invalidAssetPairPrice);
+
+        vm.startPrank(_owner);
+        PriceOracle(_priceOracleAddress).updateAssets(_assets);
+        PriceOracle(_priceOracleAddress).updateAssetPairs(_assetPairs);
+
+        vm.expectRevert(
+            abi.encodeWithSelector(
+                PriceOracle.AssetPairDoesNotExist.selector,
+                invalidAssetPairPrice.id
+            )
+        );
+        PriceOracle(_priceOracleAddress).updateAssetPairPrices(_assetPairPrices);
+        vm.stopPrank();
     }
 
     function testUpdateAssetPairPricesShouldRevertIfInvalidPriceInAssetPairPrices(
     ) public {
         PriceOracle.AssetPairPrice memory invalidAssetPairPrice = PriceOracle
-            .AssetPairPrice(bytes32(uint256(99)), 0, _expectedAssetPairTimestamp);
+            .AssetPairPrice(_expectedAssetPairId, 0, _expectedAssetPairTimestamp);
 
         _assetPairPrices.push(invalidAssetPairPrice);
+
+        vm.startPrank(_owner);
+        PriceOracle(_priceOracleAddress).updateAssets(_assets);
+        PriceOracle(_priceOracleAddress).updateAssetPairs(_assetPairs);
 
         vm.expectRevert(
             abi.encodeWithSelector(
@@ -79,19 +167,22 @@ contract UpdateAssetPairPricesTest is AbstractTest {
                 invalidAssetPairPrice
             )
         );
-
-        vm.prank(_owner);
         PriceOracle(_priceOracleAddress).updateAssetPairPrices(_assetPairPrices);
+        vm.stopPrank();
     }
 
     function testUpdateAssetPairPricesShouldRevertIfInvalidTimestampInAssetPairPrices(
     ) public {
         PriceOracle.AssetPairPrice memory invalidAssetPairPrice = PriceOracle
             .AssetPairPrice(
-            bytes32(uint256(99)), 10e18, _expectedAssetPairTimestamp - 3 hours
+            _expectedAssetPairId, 10e18, _expectedAssetPairTimestamp - 3 hours
         );
 
         _assetPairPrices.push(invalidAssetPairPrice);
+
+        vm.startPrank(_owner);
+        PriceOracle(_priceOracleAddress).updateAssets(_assets);
+        PriceOracle(_priceOracleAddress).updateAssetPairs(_assetPairs);
 
         vm.expectRevert(
             abi.encodeWithSelector(
@@ -99,9 +190,8 @@ contract UpdateAssetPairPricesTest is AbstractTest {
                 invalidAssetPairPrice
             )
         );
-
-        vm.prank(_owner);
         PriceOracle(_priceOracleAddress).updateAssetPairPrices(_assetPairPrices);
+        vm.stopPrank();
     }
 
     function testUpdateAssetPairPricesShouldRevertIfNotTheOwner() public {
@@ -111,8 +201,11 @@ contract UpdateAssetPairPricesTest is AbstractTest {
     }
 
     function testUpdateAssetPairPricesShouldUpdateAssetPairPrices() public {
-        vm.prank(_owner);
+        vm.startPrank(_owner);
+        PriceOracle(_priceOracleAddress).updateAssets(_assets);
+        PriceOracle(_priceOracleAddress).updateAssetPairs(_assetPairs);
         PriceOracle(_priceOracleAddress).updateAssetPairPrices(_assetPairPrices);
+        vm.stopPrank();
 
         assertEq(
             vm.load(
@@ -120,7 +213,7 @@ contract UpdateAssetPairPricesTest is AbstractTest {
                 _slotOf(
                     bytes32("id"),
                     _expectedAssetPairId,
-                    "_assetPairPrices",
+                    "_assetPairs",
                     "PriceOracle"
                 )
             ),
@@ -135,7 +228,7 @@ contract UpdateAssetPairPricesTest is AbstractTest {
                         _slotOf(
                             bytes32("price"),
                             _expectedAssetPairId,
-                            "_assetPairPrices",
+                            "_assetPairs",
                             "PriceOracle"
                         )
                     )
@@ -151,7 +244,7 @@ contract UpdateAssetPairPricesTest is AbstractTest {
                     _slotOf(
                         bytes32("timestamp"),
                         _expectedAssetPairId,
-                        "_assetPairPrices",
+                        "_assetPairs",
                         "PriceOracle"
                     )
                 )
@@ -163,10 +256,13 @@ contract UpdateAssetPairPricesTest is AbstractTest {
     function testUpdateAssetPairPricesShouldEmitUpdateAssetPairPricesEvent()
         public
     {
+        vm.startPrank(_owner);
+        PriceOracle(_priceOracleAddress).updateAssets(_assets);
+        PriceOracle(_priceOracleAddress).updateAssetPairs(_assetPairs);
+
         vm.expectEmit(true, true, false, true);
         emit AssetPairPricesUpdated(_assetPairPrices);
-
-        vm.prank(_owner);
         PriceOracle(_priceOracleAddress).updateAssetPairPrices(_assetPairPrices);
+        vm.stopPrank();
     }
 }
