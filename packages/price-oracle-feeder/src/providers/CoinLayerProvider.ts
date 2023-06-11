@@ -20,7 +20,7 @@ class CoinLayerProvider implements BulkCurrencyProvider {
     if (pairs.length === 0) return [];
 
     const baseSymbols = pairs
-      .map((pair) => getAssetSymbolById(pair.base))
+      .map((pair) => getAssetSymbolById(pair.baseAssetId))
       .join(",");
     const url = `${this.url}/live?target=USD&symbols=${baseSymbols}&access_key=${providerCoinLayerAccessKey}`;
     const pairPrices = this.cache.get(url) || [];
@@ -30,13 +30,13 @@ class CoinLayerProvider implements BulkCurrencyProvider {
     const response = await axios.get(url);
 
     for (const pair of pairs) {
-      const symbol = getAssetSymbolById(pair.base);
+      const symbol = getAssetSymbolById(pair.baseAssetId);
 
       if (Object.prototype.hasOwnProperty.call(response.data.rates, symbol)) {
         pairPrices.push({
           id: pair.id,
-          base: pair.base,
-          quote: pair.quote,
+          baseAssetId: pair.baseAssetId,
+          quoteAssetId: pair.quoteAssetId,
           price: response.data.rates[symbol],
           timestamp: response.data.timestamp * 1000,
         });

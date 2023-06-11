@@ -1,4 +1,4 @@
-import { toBeHex, parseUnits, toBigInt } from "ethers";
+import { toBeHex, parseUnits } from "ethers";
 import { AssetPairPrice } from "../types/AssetPairPrice.js";
 import { BlockChainAssetPairPrice } from "../types/BlockChainAssetPairPrice.js";
 import { debug } from "../config/index.js";
@@ -35,7 +35,7 @@ class AssetPairPriceTransformer {
           ).toString(),
           this.decimals,
         ),
-        timestamp: toBigInt(assetPairPrice.timestamp),
+        timestamp: Math.floor(assetPairPrice.timestamp / 1000),
       };
 
       if (debug) {

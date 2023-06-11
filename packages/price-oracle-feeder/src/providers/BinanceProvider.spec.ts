@@ -21,8 +21,8 @@ describe("BinanceProvider", () => {
   beforeEach(() => {
     binanceProvider = new BinanceProvider();
     pairs = [
-      { id: 1, base: "bitcoin", quote: "united-states-dollar" },
-      { id: 2, base: "ethereum", quote: "united-states-dollar" },
+      { id: 1, baseAssetId: "bitcoin", quoteAssetId: "united-states-dollar" },
+      { id: 2, baseAssetId: "ethereum", quoteAssetId: "united-states-dollar" },
     ];
 
     setupNock(200, [
@@ -41,15 +41,15 @@ describe("BinanceProvider", () => {
     expect(prices).toEqual([
       {
         id: 1,
-        base: "bitcoin",
-        quote: "united-states-dollar",
+        baseAssetId: "bitcoin",
+        quoteAssetId: "united-states-dollar",
         price: 60000,
         timestamp: expect.any(Number),
       },
       {
         id: 2,
-        base: "ethereum",
-        quote: "united-states-dollar",
+        baseAssetId: "ethereum",
+        quoteAssetId: "united-states-dollar",
         price: 2000,
         timestamp: expect.any(Number),
       },
@@ -64,15 +64,15 @@ describe("BinanceProvider", () => {
     expect(prices).toEqual([
       {
         id: 1,
-        base: "bitcoin",
-        quote: "united-states-dollar",
+        baseAssetId: "bitcoin",
+        quoteAssetId: "united-states-dollar",
         price: 60000,
         timestamp: expect.any(Number),
       },
       {
         id: 2,
-        base: "ethereum",
-        quote: "united-states-dollar",
+        baseAssetId: "ethereum",
+        quoteAssetId: "united-states-dollar",
         price: 2000,
         timestamp: expect.any(Number),
       },

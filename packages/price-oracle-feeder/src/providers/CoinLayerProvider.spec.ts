@@ -25,8 +25,8 @@ describe("CoinLayerProvider", () => {
   beforeEach(() => {
     coinLayerProvider = new CoinLayerProvider();
     pairs = [
-      { id: 1, base: "bitcoin", quote: "united-states-dollar" },
-      { id: 2, base: "ethereum", quote: "united-states-dollar" },
+      { id: 1, baseAssetId: "bitcoin", quoteAssetId: "united-states-dollar" },
+      { id: 2, baseAssetId: "ethereum", quoteAssetId: "united-states-dollar" },
     ];
 
     setupNock(200, {
@@ -47,15 +47,15 @@ describe("CoinLayerProvider", () => {
     expect(prices).toEqual([
       {
         id: 1,
-        base: "bitcoin",
-        quote: "united-states-dollar",
+        baseAssetId: "bitcoin",
+        quoteAssetId: "united-states-dollar",
         price: 60000,
         timestamp: 1684136889000,
       },
       {
         id: 2,
-        base: "ethereum",
-        quote: "united-states-dollar",
+        baseAssetId: "ethereum",
+        quoteAssetId: "united-states-dollar",
         price: 2000,
         timestamp: 1684136889000,
       },
@@ -70,15 +70,15 @@ describe("CoinLayerProvider", () => {
     expect(prices).toEqual([
       {
         id: 1,
-        base: "bitcoin",
-        quote: "united-states-dollar",
+        baseAssetId: "bitcoin",
+        quoteAssetId: "united-states-dollar",
         price: 60000,
         timestamp: 1684136889000,
       },
       {
         id: 2,
-        base: "ethereum",
-        quote: "united-states-dollar",
+        baseAssetId: "ethereum",
+        quoteAssetId: "united-states-dollar",
         price: 2000,
         timestamp: 1684136889000,
       },

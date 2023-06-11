@@ -1,9 +1,12 @@
-Error.stackTraceLimit = 50;
+// Error.stackTraceLimit = 50;
 
 import {
-  jsonRpcUrl,
-  oracleContractAddress,
-  oracleOwnerPrivateKey,
+  mumbaiApiKey,
+  mumbaiSpicyPriceOracleProxyAddress,
+  mumbaiSpicyPriceOracleProxyOwnerPK,
+  mainnetApiKey,
+  mainnetSpicyPriceOracleProxyAddress,
+  mainnetSpicyPriceOracleProxyOwnerPK,
 } from "./config/index.js";
 import {
   BulkCurrencyProvider,
@@ -20,12 +23,23 @@ export default async function main(): Promise<void> {
   const assetPairPriceTransformer = new AssetPairPriceTransformer({
     decimals: 18,
   });
-  const blockchainService = new BlockchainService({
-    jsonRpcUrl: jsonRpcUrl,
-    contractAddress: oracleContractAddress,
-    privateKey: oracleOwnerPrivateKey,
-    batchSize: 20,
+
+  const mumbaiBlockchainService = new BlockchainService({
+    chain: "maticmum",
+    apiKey: mumbaiApiKey,
+    contractAddress: mumbaiSpicyPriceOracleProxyAddress,
+    privateKey: mumbaiSpicyPriceOracleProxyOwnerPK,
+    batchSize: 30,
   });
+
+  const mainnetBlockchainService = new BlockchainService({
+    chain: "matic",
+    apiKey: mainnetApiKey,
+    contractAddress: mainnetSpicyPriceOracleProxyAddress,
+    privateKey: mainnetSpicyPriceOracleProxyOwnerPK,
+    batchSize: 30,
+  });
+
   const singlePairCurrencyProviders: SinglePairCurrencyProvider[] = [];
   const bulkCurrencyProviders: BulkCurrencyProvider[] = [
     new CoinGeckoProvider(),
@@ -41,10 +55,17 @@ export default async function main(): Promise<void> {
 
   const assetPairPrices = await currencyFetcher.fetchAllPrices();
 
-  await blockchainService.updateAssetPairPrices(
+  const transformedAssetPairPrices =
     assetPairPriceTransformer.transformBlockChainAssetPairPrice(
       assetPairPrices,
-    ),
+    );
+
+  await mumbaiBlockchainService.updateAssetPairPrices(
+    transformedAssetPairPrices,
+  );
+
+  await mainnetBlockchainService.updateAssetPairPrices(
+    transformedAssetPairPrices,
   );
 }
 

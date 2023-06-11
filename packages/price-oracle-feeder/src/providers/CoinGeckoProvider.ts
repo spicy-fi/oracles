@@ -40,7 +40,7 @@ class CoinGeckoProvider implements BulkCurrencyProvider {
     if (pairs.length === 0) return [];
 
     const internalIds = pairs
-      .map((pair) => getCoinGeckoMappingById(pair.base))
+      .map((pair) => getCoinGeckoMappingById(pair.baseAssetId))
       .join(",");
     const url = `${this.url}/simple/price?ids=${internalIds}&vs_currencies=usd&include_last_updated_at=true`;
     const pairPrices = this.cache.get(url) || [];
@@ -50,7 +50,7 @@ class CoinGeckoProvider implements BulkCurrencyProvider {
     const response = await this.rateLimitedFetch(url);
 
     for (const pair of pairs) {
-      const internalId = getCoinGeckoMappingById(pair.base);
+      const internalId = getCoinGeckoMappingById(pair.baseAssetId);
 
       if (Object.prototype.hasOwnProperty.call(response.data, internalId)) {
         if (!response.data[internalId]?.usd) {
@@ -65,8 +65,8 @@ class CoinGeckoProvider implements BulkCurrencyProvider {
 
         pairPrices.push({
           id: pair.id,
-          base: pair.base,
-          quote: pair.quote,
+          baseAssetId: pair.baseAssetId,
+          quoteAssetId: pair.quoteAssetId,
           price: response.data[internalId].usd,
           timestamp: response.data[internalId].last_updated_at * 1000,
         });

@@ -18,7 +18,8 @@ export function getAssetPairIdByAssetIds(
 ): AssetPair {
   const assetPair = assetPairs.find(
     (assetPair) =>
-      assetPair.base === baseAssetId && assetPair.quote === quoteAssetId,
+      assetPair.baseAssetId === baseAssetId &&
+      assetPair.quoteAssetId === quoteAssetId,
   );
 
   if (assetPair === undefined) {
@@ -33,7 +34,7 @@ export function getAssetPairIdByAssetIds(
 export function getAssetPairSymbolById(id: number): string {
   const assetPair = getAssetPairById(id);
 
-  return `${getAssetSymbolById(assetPair.base)}${getAssetSymbolById(
-    assetPair.quote,
+  return `${getAssetSymbolById(assetPair.baseAssetId)}${getAssetSymbolById(
+    assetPair.quoteAssetId,
   )}`;
 }

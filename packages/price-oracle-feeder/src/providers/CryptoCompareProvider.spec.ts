@@ -29,8 +29,8 @@ describe("CryptoCompareProvider", () => {
   beforeEach(() => {
     cryptoCompareProvider = new CryptoCompareProvider();
     pairs = [
-      { id: 1, base: "bitcoin", quote: "united-states-dollar" },
-      { id: 2, base: "ethereum", quote: "united-states-dollar" },
+      { id: 1, baseAssetId: "bitcoin", quoteAssetId: "united-states-dollar" },
+      { id: 2, baseAssetId: "ethereum", quoteAssetId: "united-states-dollar" },
     ];
 
     setupNock(200, {
@@ -49,15 +49,15 @@ describe("CryptoCompareProvider", () => {
     expect(prices).toEqual([
       {
         id: 1,
-        base: "bitcoin",
-        quote: "united-states-dollar",
+        baseAssetId: "bitcoin",
+        quoteAssetId: "united-states-dollar",
         price: "60000.00",
         timestamp: expect.any(Number),
       },
       {
         id: 2,
-        base: "ethereum",
-        quote: "united-states-dollar",
+        baseAssetId: "ethereum",
+        quoteAssetId: "united-states-dollar",
         price: "2000.00",
         timestamp: expect.any(Number),
       },
@@ -72,15 +72,15 @@ describe("CryptoCompareProvider", () => {
     expect(prices).toEqual([
       {
         id: 1,
-        base: "bitcoin",
-        quote: "united-states-dollar",
+        baseAssetId: "bitcoin",
+        quoteAssetId: "united-states-dollar",
         price: "60000.00",
         timestamp: expect.any(Number),
       },
       {
         id: 2,
-        base: "ethereum",
-        quote: "united-states-dollar",
+        baseAssetId: "ethereum",
+        quoteAssetId: "united-states-dollar",
         price: "2000.00",
         timestamp: expect.any(Number),
       },

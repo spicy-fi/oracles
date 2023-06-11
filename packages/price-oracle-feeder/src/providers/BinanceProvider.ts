@@ -46,8 +46,8 @@ class BinanceProvider implements BulkCurrencyProvider {
 
         pairPrices.push({
           id: pair.id,
-          base: pair.base,
-          quote: pair.quote,
+          baseAssetId: pair.baseAssetId,
+          quoteAssetId: pair.quoteAssetId,
           price: item.price,
           timestamp: currentTime,
         });

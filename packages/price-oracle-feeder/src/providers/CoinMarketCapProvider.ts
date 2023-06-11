@@ -22,7 +22,7 @@ class CoinMarketCapProvider implements BulkCurrencyProvider {
     if (pairs.length === 0) return [];
 
     const internalIds = pairs
-      .map((pair) => getCoinMarketCapMappingById(pair.base))
+      .map((pair) => getCoinMarketCapMappingById(pair.baseAssetId))
       .join(",");
     const url = `${this.url}/cryptocurrency/quotes/latest?id=${internalIds}&aux=is_active`;
     const pairPrices = this.cache.get(url) || [];
@@ -34,7 +34,7 @@ class CoinMarketCapProvider implements BulkCurrencyProvider {
     });
 
     for (const pair of pairs) {
-      const internalId = getCoinMarketCapMappingById(pair.base);
+      const internalId = getCoinMarketCapMappingById(pair.baseAssetId);
 
       if (
         Object.prototype.hasOwnProperty.call(response.data.data, internalId) &&
@@ -52,8 +52,8 @@ class CoinMarketCapProvider implements BulkCurrencyProvider {
 
         pairPrices.push({
           id: pair.id,
-          base: pair.base,
-          quote: pair.quote,
+          baseAssetId: pair.baseAssetId,
+          quoteAssetId: pair.quoteAssetId,
           price: response.data.data[internalId].quote.USD.price,
           timestamp: new Date(
             response.data.data[internalId].quote.USD.last_updated,

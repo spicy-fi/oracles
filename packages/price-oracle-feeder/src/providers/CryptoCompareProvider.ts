@@ -38,7 +38,7 @@ class CryptoCompareProvider implements BulkCurrencyProvider {
     if (pairs.length === 0) return [];
 
     const baseSymbols = pairs
-      .map((pair) => getAssetSymbolById(pair.base))
+      .map((pair) => getAssetSymbolById(pair.baseAssetId))
       .join(",");
     const url = `${this.url}/data/pricemulti?fsyms=${baseSymbols}&tsyms=USD&extraParams=spicy-price-oracle-fetcher`;
     const pairPrices = this.cache.get(url) || [];
@@ -52,7 +52,7 @@ class CryptoCompareProvider implements BulkCurrencyProvider {
     const currentTime = Date.now();
 
     for (const pair of pairs) {
-      const symbol = getAssetSymbolById(pair.base);
+      const symbol = getAssetSymbolById(pair.baseAssetId);
 
       if (Object.prototype.hasOwnProperty.call(response.data, symbol)) {
         if (!response.data[symbol]?.USD) {
@@ -65,8 +65,8 @@ class CryptoCompareProvider implements BulkCurrencyProvider {
 
         pairPrices.push({
           id: pair.id,
-          base: pair.base,
-          quote: pair.quote,
+          baseAssetId: pair.baseAssetId,
+          quoteAssetId: pair.quoteAssetId,
           price: response.data[symbol].USD,
           timestamp: currentTime,
         });
