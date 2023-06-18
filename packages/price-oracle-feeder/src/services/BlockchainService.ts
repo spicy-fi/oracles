@@ -19,12 +19,12 @@ const chainMap = {
   matic: {
     network: "matic",
     name: "Polygon Mainnet",
-    gasStationUrl: "https://gasstation-mainnet.matic.network/v2",
+    gasStationUrl: "https://gasstation.polygon.technology/v2",
   },
   maticmum: {
     network: "matic-mumbai",
     name: "Polygon Mumbai",
-    gasStationUrl: "https://gasstation-mumbai.matic.today/v2",
+    gasStationUrl: "https://gasstation-testnet.polygon.technology/v2",
   },
 };
 
