@@ -1,0 +1,19 @@
+{
+  "name": "@spicyfi/price-oracle-manager",
+  "version": "0.0.1",
+  "scripts": {
+    "registerNodes:local": "make register-local",
+    "registerNodes:mumbai": "make register-mumbai",
+    "registerNodes:mainnet": "make register-mainnet"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.9.1",
+    "ds-test": "github:dapphub/ds-test",
+    "forge-std": "github:foundry-rs/forge-std",
+    "solhint": "^3.4.1",
+    "synthetix-v3": "github:spicy-fi/synthetix-v3"
+  },
+  "dependencies": {
+    "dotenv": "^16.1.3"
+  }
+}

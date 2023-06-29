@@ -1,0 +1,29 @@
+[profile.default]
+solc = "0.8.18"
+out = 'out'
+libs = ["node_modules", "lib"]
+allow_paths = ["../../node_modules"]
+extra_output = [
+  "abi",
+  "evm.bytecode",
+  "evm.deployedBytecode",
+  "evm.methodIdentifiers",
+  "storageLayout",
+]
+extra-output-files = ["abi"]
+ffi = true
+
+fs_permissions = [{ access = "read", path = "./" }]
+
+[fmt]
+line_length = 80
+
+[etherscan]
+matic = { key = "${POLYGONSCAN_API_KEY}", url = "https://api.polygonscan.com/" }
+maticmum = { key = "${POLYGONSCAN_API_KEY}", url = "https://api-testnet.polygonscan.com/" }
+
+[rpc_endpoints]
+matic = "${POLYGON_MAINNET_RPC_URL}"
+maticmum = "${POLYGON_MUMBAI_RPC_URL}"
+
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config

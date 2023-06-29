@@ -1,0 +1,1802 @@
+[
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "symbol": "BTCUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xc907e116054ad103354f2d350fd2514433d57f6f",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000002",
+      "symbol": "ETHUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xf9680d99d6c9589e2a93a78a04a279e509205945",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000002"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000003",
+      "symbol": "BNBUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x82a6c4af830caa6c97bb504425f6a66165c2c26e",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x2f95862b045670cd22bee3114c39763a4a08beeb663b145d283c31d7d1101c4f"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000003"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000004",
+      "symbol": "USDTUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x0a6513e40db6eb1b165753ad52e80663aea50545",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x2b89b9dc8fdf9f34709a5b106b472f0f39bb6ca9ce04b0fd7f2e971688e2e53b"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000004"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000005",
+      "symbol": "ADAUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x882554df528115a743c4537828da8d5b58e52544",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x2a01deaec9e51a579277b34b122399984d0bbf57e2458a7e42fecd2829867a0d"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000005"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+      "symbol": "DOGEUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xbaf9327b6564454f4a3364c33efeef032b4b4444",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xdcef50dd0a4cd2dcc17e45df1676dcb336a11a61c69df7a0299b0150c672d25c"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000007",
+      "symbol": "XRPUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x785ba89291f676b5386652eb12b30cf361020694",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000007"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000008",
+      "symbol": "DOTUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xacb51f1a83922632ca02b25a8164c10748001bde",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000008"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000009",
+      "symbol": "USDCUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xfe4a8cc5b5b2366c1b58bea3858e81843581b2f7",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xeaa020c61cc479712813461ce153894a96a6c00b21ed0cfc2798d1f9a9e9c94a"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000009"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000000a",
+      "symbol": "UNIUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xdf0fb4e4f928d2dcb76f438575fdd8682386e13c",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x78d185a741d07edb3412b09008b7c5cfb9bbbd7d568bf00ba737b456ba171501"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000000a"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000000b",
+      "symbol": "ICPUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x84227a76a04289473057bef706646199d7c58c34",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000000b"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000000c",
+      "symbol": "LINKUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xd9ffdb71ebe7496cc440152d43986aae0ab76665",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x8ac0c70fff57e9aefdf5edf44b51d62c2d433653cbb2cf5cc06bb115af04d221"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000000c"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000000d",
+      "symbol": "BCHUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x327d9822e9932996f55b39f557aec838313da8b7",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x3dd2b63686a450ec7290df3a1e0b583c0481f651351edfa7636f39aed55cf8a3"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000000d"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000000e",
+      "symbol": "LTCUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xeb99f173cf7d9a6dc4d889c2ad7103e8383b6efa",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x6e3f3fa8253588df9326580180233eb791e03b443a3ba7a1d892e73874e19a54"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000000e"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000000f",
+      "symbol": "MATICUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xab594600376ec9fd91f8e885dadf0ce036862de0",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x5de33a9112c2b700b8d30b8a3402c103578ccfa2765696471cc672bd5cf6ac52"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000000f"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000010",
+      "symbol": "XLMUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x692ae5510ca9070095a496dbcfbcda99d4024cd9",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000010"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000011",
+      "symbol": "SOLUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x10c8264c0935b3b9870013e057f330ff3e9c56dc",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xef0d8b6fda2ceba41da15d4095d1da392a0d2f8ed0c6c7bc0f4cfac8c280b56d"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000011"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000012",
+      "symbol": "VETUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xD78bc11ef3256e3CE9dC0DF0fa7be9E9afc07f95",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000012"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000013",
+      "symbol": "ETCUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xdf3f72be10d194b58b1bb56f2c4183e661cb2114",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000013"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000014",
+      "symbol": "THETAUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x38611b09f8f2d520c14ea973765c225bf57b9eac",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000014"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000015",
+      "symbol": "EOSUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xd6285f06203d938ab713fa6a315e7d23247dde95",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000015"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000016",
+      "symbol": "TRXUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x307ccf7cbd17b69a487b9c3dbe483931cf3e1833",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000016"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000017",
+      "symbol": "FILUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xa07703E5C2eD1516107c7c72A494493Dcb99C676",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x150ac9b959aee0051e4091f0ef5216d941f590e1c5e7f91cf7635b5c11628c0e"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000017"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000018",
+      "symbol": "AAVEUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x72484b12719e23115761d5da1646945632979bb6",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x2b9ab1e972a281585084148ba1389800799bd4be63b957507db1349314e47445"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000018"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000019",
+      "symbol": "XMRUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xBE6FB0AB6302B693368D0E9001fAF77ecc6571db",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x46b8cc9347f04391764a0361e0b17c3ba394b001e7c304f7650f6376e37c321d"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000019"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000001a",
+      "symbol": "CAKEUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x2356af9529a1064d41e32d617e2ce1dca5733afa901daba9e2b68dee5d53ecf9"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000001a"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000001b",
+      "symbol": "NEOUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x74b3587A23eE786A43C8529c2e98D3C05a8fb1fB",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000001b"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000001c",
+      "symbol": "MKRUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xa070427bF5bA5709f70e98b94Cb2F435a242C46C",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000001c"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000001d",
+      "symbol": "MIOTAUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x7d620D05c317A426903596432A5ca83375dC8d2A",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000001d"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000001e",
+      "symbol": "KLAYUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x86F87CB74238a6f24606534A2fCc05469Eb2bcF5",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000001e"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000001f",
+      "symbol": "XTZUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x691e26AB58ff05800E028b0876A41B720b26FC65",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000001f"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000020",
+      "symbol": "KSMUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000020"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000020"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000021",
+      "symbol": "ATOMUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xb00b60f88b03a6a625a8d1c048c3f66653edf217439983d037e7222c4e612819"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000021"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000022",
+      "symbol": "LUNAUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000022"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000022"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000023",
+      "symbol": "ALGOUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x03Bc6D9EFed65708D35fDaEfb25E87631a0a3437",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xfa17ceaf30d19ba51112fdcc750cc83454776f47fb0112e4af07f15f4bb1ebc0"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000023"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000024",
+      "symbol": "RUNEUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000024"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000024"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000025",
+      "symbol": "COMPUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x2A8758b7257102461BC958279054e372C2b1bDE6",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000025"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000026",
+      "symbol": "DCRUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000026"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000026"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000027",
+      "symbol": "DASHUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xD94427eDee70E4991b4b8DdCc848f2B58ED01C0b",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000027"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000028",
+      "symbol": "HBARUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xC5878bDf8a89FA3bF0DC8389ae8EE6DE601D01bC",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000028"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000029",
+      "symbol": "ZECUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xBC08c639e579a391C4228F20d0C29d0690092DF0",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000029"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000002a",
+      "symbol": "CHZUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x2409987e514Ad8B0973C2b90ee1D95051DF0ECB9",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xe799f456b358a2534aa1b45141d454ac04b444ed23b1440b778549bb758f2b5c"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000002a"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000002b",
+      "symbol": "SUSHIUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x49B0c695039243BBfEb8EcD054EB70061fd54aa0",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000002b"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000002c",
+      "symbol": "HOTUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000002c"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000002c"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000002d",
+      "symbol": "MANAUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xA1CbF3Fe43BC3501e3Fc4b573e822c70e76A7512",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000002d"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000002e",
+      "symbol": "ENJUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x440A341bbC9FA86aA60A195e2409a547e48d4C0C",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000002e"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000002f",
+      "symbol": "HNTUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000002f"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000002f"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000030",
+      "symbol": "QTUMUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000030"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000030"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000031",
+      "symbol": "AVAXUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0xe01eA2fbd8D76ee323FbEd03eB9a8625EC981A10",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x93da3352f9f1d105fdfe4971cfa80e9dd777bfc5d0f683ebb6e1294b92137bb7"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000031"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000032",
+      "symbol": "SANDUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x3D49406EDd4D52Fb7FFd25485f32E073b529C924",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000032"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000033",
+      "symbol": "PAXGUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x0f6914d8e7e1214CDb3A4C6fbf729b75C69DF608",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000033"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000034",
+      "symbol": "GALAUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000034"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000034"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000035",
+      "symbol": "SHIBUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x3710abeb1A0Fc7C2EC59C26c8DAA7a448ff6125A",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xf0d57deca57b3da2fe63a493f4c25925fdfd8edf834b20f93e1f84dbd1504d4a"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000035"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000036",
+      "symbol": "LRCUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000036"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000036"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000037",
+      "symbol": "AUDIOUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000037"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000037"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000038",
+      "symbol": "BATUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x2346Ce62bd732c62618944E51cbFa09D985d86D2",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000038"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000039",
+      "symbol": "MINAUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000039"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000039"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000003a",
+      "symbol": "FTMUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x58326c0F831b2Dbf7234A4204F28Bba79AA06d5f",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x5c6c0d2386e3352356c3ab84434fafb5ea067ac2678a38a338c4a69ddc4bdb0c"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000003a"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000003b",
+      "symbol": "EGLDUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000003b"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000003b"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000003c",
+      "symbol": "RENUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000003c"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000003c"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000003d",
+      "symbol": "CRVUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x336584C8E6Dc19637A5b36206B1c79923111b405",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xa19d04ac696c7a6616d291c7e5d1377cc8be437c327b75adb5dc1bad745fcae8"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000003d"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000003e",
+      "symbol": "AXSUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x9c371aE34509590E10aB98205d2dF5936A1aD875",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0xb7e3904c08ddd9c0c10c6d207d390fd19e87eb6aab96304f571ed94caebdefa0"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000003e"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x000000000000000000000000000000000000000000000000000000000000003f",
+      "symbol": "KNCUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x10e5f3DFc81B3e5Ef4e648C4454D04e79E1E41E2",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x000000000000000000000000000000000000000000000000000000000000003f"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000040",
+      "symbol": "QNTUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000040"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000040"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000041",
+      "symbol": "ENSUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000041"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000041"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000042",
+      "symbol": "FTTUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x817A7D43f0277Ca480AE03Ec76Fc63A2EC7114bA",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000042"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000043",
+      "symbol": "OPUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x385f64d993f7b77d8182ed5003d97c60aa3361f3cecfe711544d2d59165e9bdf"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000043"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000044",
+      "symbol": "FLUXUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000044"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000044"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000045",
+      "symbol": "IMXUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000045"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000045"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000046",
+      "symbol": "ILVUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000046"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000046"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000047",
+      "symbol": "CSPRUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000047"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000047"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000048",
+      "symbol": "APTUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x03ae4db29ed4ae33d323568895aa00337e658e348b37509f5372ae51f0af00d5"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000048"
+        }
+      }
+    ]
+  },
+  {
+    "nodeType": 1,
+    "parameters": {
+      "mode": 0,
+      "staticNodeId": "0x0000000000000000000000000000000000000000000000000000000000000049",
+      "symbol": "APEUSD"
+    },
+    "parents": [
+      {
+        "nodeType": 3,
+        "parameters": {
+          "address": "0x2Ac3F3Bfac8fC9094BC3f0F9041a51375235B992",
+          "decimals": 8
+        }
+      },
+      {
+        "nodeType": 5,
+        "parameters": {
+          "id": "0x15add95022ae13563a11992e727c91bdb6b55bc183d9d747436c80a483d8c864"
+        }
+      },
+      {
+        "nodeType": 2,
+        "parameters": {
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000049"
+        }
+      }
+    ]
+  }
+]
