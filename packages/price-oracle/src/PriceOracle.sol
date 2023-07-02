@@ -67,6 +67,10 @@ contract PriceOracle is
     // solhint-disable-next-line no-empty-blocks
     function _authorizeUpgrade(address) internal override onlyOwner {}
 
+    function getAsset(bytes32 id) external view returns (Asset memory) {
+        return _assets[id];
+    }
+
     function updateAssets(Asset[] calldata assets) external onlyOwner {
         for (uint256 i = 0; i < assets.length; i++) {
             if (
@@ -80,6 +84,14 @@ contract PriceOracle is
         }
 
         emit AssetsUpdated(assets);
+    }
+
+    function getAssetPair(bytes32 id)
+        external
+        view
+        returns (AssetPair memory)
+    {
+        return _assetPairs[id];
     }
 
     function updateAssetPairs(AssetPair[] calldata assetPairs)

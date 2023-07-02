@@ -23,14 +23,17 @@ abstract contract AbstractTest is Test, Slots {
             // solhint-disable-next-line no-empty-blocks
         } catch {}
 
-        _owner = vm.envAddress("LOCAL_OWNER_ADDRESS");
+        _owner = vm.envAddress("LOCAL_SPICY_PRICE_ORACLE_OWNER_ADDRESS");
 
         if (block.chainid == 80001) {
-            _owner = vm.envAddress("POLYGON_MUMBAI_OWNER_ADDRESS");
+            _owner =
+                vm.envAddress("POLYGON_MUMBAI_SPICY_PRICE_ORACLE_OWNER_ADDRESS");
         }
 
         if (block.chainid == 137) {
-            _owner = vm.envAddress("POLYGON_MAINNET_OWNER_ADDRESS");
+            _owner = vm.envAddress(
+                "POLYGON_MAINNET_SPICY_PRICE_ORACLE_OWNER_ADDRESS"
+            );
         }
 
         // solhint-disable-next-line reason-string
