@@ -477,10 +477,9 @@
     },
     "parents": [
       {
-        "nodeType": 3,
+        "nodeType": 2,
         "parameters": {
-          "address": "0xD78bc11ef3256e3CE9dC0DF0fa7be9E9afc07f95",
-          "decimals": 8
+          "id": "0x0000000000000000000000000000000000000000000000000000000000000012"
         }
       },
       {
@@ -701,10 +700,9 @@
     },
     "parents": [
       {
-        "nodeType": 3,
+        "nodeType": 2,
         "parameters": {
-          "address": "0x74b3587A23eE786A43C8529c2e98D3C05a8fb1fB",
-          "decimals": 8
+          "id": "0x000000000000000000000000000000000000000000000000000000000000001b"
         }
       },
       {
@@ -747,10 +745,9 @@
     },
     "parents": [
       {
-        "nodeType": 3,
+        "nodeType": 2,
         "parameters": {
-          "address": "0x7d620D05c317A426903596432A5ca83375dC8d2A",
-          "decimals": 8
+          "id": "0x000000000000000000000000000000000000000000000000000000000000001d"
         }
       },
       {
