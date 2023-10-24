@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "engines": {
-    "node": ">= 18.12 <19"
+    "node": ">= 18.12 <21"
   },
   "scripts": {
     "start": "pnpm build && node build/index.js",
