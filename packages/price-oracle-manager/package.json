@@ -10,7 +10,7 @@
     "@openzeppelin/contracts": "^4.9.1",
     "ds-test": "github:dapphub/ds-test",
     "forge-std": "github:foundry-rs/forge-std",
-    "solhint": "^3.4.1",
+    "solhint": "^4.0.0",
     "synthetix-v3": "github:spicy-fi/synthetix-v3"
   },
   "dependencies": {
