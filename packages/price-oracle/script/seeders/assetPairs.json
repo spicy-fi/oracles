@@ -363,5 +363,115 @@
     "id": 73,
     "baseAssetId": "apecoin",
     "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 74,
+    "baseAssetId": "icecream",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 75,
+    "baseAssetId": "ecomi",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 76,
+    "baseAssetId": "render",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 77,
+    "baseAssetId": "injective",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 78,
+    "baseAssetId": "synthetix",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 79,
+    "baseAssetId": "wilder-world",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 80,
+    "baseAssetId": "toncoin",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 81,
+    "baseAssetId": "mantle",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 82,
+    "baseAssetId": "near-protocol",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 83,
+    "baseAssetId": "the-graph",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 84,
+    "baseAssetId": "stacks",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 85,
+    "baseAssetId": "frax-share",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 86,
+    "baseAssetId": "safepal",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 87,
+    "baseAssetId": "astar",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 88,
+    "baseAssetId": "moonbeam",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 89,
+    "baseAssetId": "kadena",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 90,
+    "baseAssetId": "radix",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 91,
+    "baseAssetId": "trust-wallet-token",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 92,
+    "baseAssetId": "lido-dao",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 93,
+    "baseAssetId": "vulcan-forged-pyr",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 94,
+    "baseAssetId": "yearn-finance",
+    "quoteAssetId": "united-states-dollar"
+  },
+  {
+    "id": 95,
+    "baseAssetId": "swissborg",
+    "quoteAssetId": "united-states-dollar"
   }
 ]
