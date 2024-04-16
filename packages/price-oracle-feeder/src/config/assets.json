@@ -368,5 +368,115 @@
     "id": "apecoin",
     "symbol": "APE",
     "name": "ApeCoin"
+  },
+  {
+    "id": "icecream",
+    "symbol": "ICE",
+    "name": "IceCream"
+  },
+  {
+    "id": "ecomi",
+    "symbol": "OMI",
+    "name": "Ecomi"
+  },
+  {
+    "id": "render",
+    "symbol": "RNDR",
+    "name": "Render"
+  },
+  {
+    "id": "injective",
+    "symbol": "INJ",
+    "name": "Injective"
+  },
+  {
+    "id": "synthetix",
+    "symbol": "SNX",
+    "name": "Synthetix"
+  },
+  {
+    "id": "wilder-world",
+    "symbol": "WILD",
+    "name": "Wilder World"
+  },
+  {
+    "id": "toncoin",
+    "symbol": "TON",
+    "name": "Toncoin"
+  },
+  {
+    "id": "mantle",
+    "symbol": "MNT",
+    "name": "Mantle"
+  },
+  {
+    "id": "near-protocol",
+    "symbol": "NEAR",
+    "name": "Near Protocol"
+  },
+  {
+    "id": "the-graph",
+    "symbol": "GRT",
+    "name": "The Graph"
+  },
+  {
+    "id": "stacks",
+    "symbol": "STX",
+    "name": "Stacks"
+  },
+  {
+    "id": "frax-share",
+    "symbol": "FXS",
+    "name": "Frax Share"
+  },
+  {
+    "id": "safepal",
+    "symbol": "SFP",
+    "name": "SafePal"
+  },
+  {
+    "id": "astar",
+    "symbol": "ASTR",
+    "name": "Astar"
+  },
+  {
+    "id": "moonbeam",
+    "symbol": "GLMR",
+    "name": "Moonbeam"
+  },
+  {
+    "id": "kadena",
+    "symbol": "KDA",
+    "name": "Kadena"
+  },
+  {
+    "id": "radix",
+    "symbol": "XRD",
+    "name": "Radix"
+  },
+  {
+    "id": "trust-wallet-token",
+    "symbol": "TWT",
+    "name": "Trust Wallet Token"
+  },
+  {
+    "id": "lido-dao",
+    "symbol": "LDO",
+    "name": "Lido DAO"
+  },
+  {
+    "id": "vulcan-forged-pyr",
+    "symbol": "PYR",
+    "name": "Vulcan Forged PYR"
+  },
+  {
+    "id": "yearn-finance",
+    "symbol": "YFI",
+    "name": "yearn.finance"
+  },
+  {
+    "id": "swissborg",
+    "symbol": "BORG",
+    "name": "SwissBorg"
   }
 ]

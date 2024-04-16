@@ -1,9 +1,9 @@
 // Error.stackTraceLimit = 50;
 
 import {
-  mumbaiApiKey,
-  mumbaiSpicyPriceOracleProxyAddress,
-  mumbaiSpicyPriceOracleProxyOwnerPK,
+  // mumbaiApiKey,
+  // mumbaiSpicyPriceOracleProxyAddress,
+  // mumbaiSpicyPriceOracleProxyOwnerPK,
   mainnetApiKey,
   mainnetSpicyPriceOracleProxyAddress,
   mainnetSpicyPriceOracleProxyOwnerPK,
@@ -11,10 +11,10 @@ import {
 import {
   BulkCurrencyProvider,
   CoinGeckoProvider,
-  CoinLayerProvider,
+  // CoinLayerProvider,
   CoinMarketCapProvider,
   SinglePairCurrencyProvider,
-  CryptoCompareProvider,
+  // CryptoCompareProvider,
 } from "./providers/index.js";
 import AssetPairPriceTransformer from "./services/AssetPairPriceTransformer.js";
 import { BlockchainService, CurrencyFetcher } from "./services/index.js";
@@ -24,13 +24,13 @@ export default async function main(): Promise<void> {
     decimals: 18,
   });
 
-  const mumbaiBlockchainService = new BlockchainService({
-    chain: "maticmum",
-    apiKey: mumbaiApiKey,
-    contractAddress: mumbaiSpicyPriceOracleProxyAddress,
-    privateKey: mumbaiSpicyPriceOracleProxyOwnerPK,
-    batchSize: 30,
-  });
+  // const mumbaiBlockchainService = new BlockchainService({
+  //   chain: "maticmum",
+  //   apiKey: mumbaiApiKey,
+  //   contractAddress: mumbaiSpicyPriceOracleProxyAddress,
+  //   privateKey: mumbaiSpicyPriceOracleProxyOwnerPK,
+  //   batchSize: 30,
+  // });
 
   const mainnetBlockchainService = new BlockchainService({
     chain: "matic",
@@ -44,8 +44,8 @@ export default async function main(): Promise<void> {
   const bulkCurrencyProviders: BulkCurrencyProvider[] = [
     new CoinGeckoProvider(),
     new CoinMarketCapProvider(),
-    new CryptoCompareProvider(),
-    new CoinLayerProvider(),
+    // new CryptoCompareProvider(),
+    // new CoinLayerProvider(),
   ];
 
   const currencyFetcher = new CurrencyFetcher(
@@ -60,9 +60,9 @@ export default async function main(): Promise<void> {
       assetPairPrices,
     );
 
-  await mumbaiBlockchainService.updateAssetPairPrices(
-    transformedAssetPairPrices,
-  );
+  // await mumbaiBlockchainService.updateAssetPairPrices(
+  //   transformedAssetPairPrices,
+  // );
 
   await mainnetBlockchainService.updateAssetPairPrices(
     transformedAssetPairPrices,
