@@ -1,6 +1,6 @@
 import "dotenv/config";
-import _assets from "./assets.json" assert { type: "json" };
-import _assetPairs from "./assetPairs.json" assert { type: "json" };
+import _assets from "./assets.json" with { type: "json" };
+import _assetPairs from "./assetPairs.json" with { type: "json" };
 import { Asset } from "../types/Asset.js";
 import { AssetPair } from "../types/AssetPair.js";
 

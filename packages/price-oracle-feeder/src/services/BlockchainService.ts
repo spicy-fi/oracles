@@ -7,8 +7,10 @@ import {
   NonceManager,
   parseUnits,
   FeeData,
-  AlchemyProvider,
+  // AlchemyProvider,
+  InfuraProvider
 } from "ethers";
+
 import { BlockChainAssetPairPrice } from "../types/BlockChainAssetPairPrice.js";
 import { debug } from "../config/index.js";
 import TransactionFailedError from "../errors/TransactionFailedError.js";
@@ -34,7 +36,7 @@ class BlockchainService {
   private eventCount: number;
   private txReceipts: number;
   private txTotal: number;
-  private provider: AlchemyProvider;
+  private provider: InfuraProvider;
   private signer: NonceManager;
   private contract: Contract;
 
@@ -50,10 +52,18 @@ class BlockchainService {
     this.eventCount = 0;
     this.txReceipts = 0;
     this.txTotal = 0;
-    this.provider = new AlchemyProvider(
+    // this.provider = new AlchemyProvider(
+    //   chainMap[options.chain as keyof typeof chainMap].network,
+    //   options.apiKey,
+    // );
+
+    this.provider = new InfuraProvider(
       chainMap[options.chain as keyof typeof chainMap].network,
-      options.apiKey,
+      "1a9a1a42d45f4856a1ae39b72cfbfe00",
+      // ""
+      // options.apiKey,
     );
+
 
     const originalGetFeeData = this.provider.getFeeData.bind(this.provider);
     this.provider.getFeeData = async () => {
@@ -66,7 +76,7 @@ class BlockchainService {
         blockNumber: number;
       };
       const {
-        data: { standard },
+        data: { fast },
       } = await axios.get<GasStationData>(
         chainMap[options.chain as keyof typeof chainMap].gasStationUrl,
       );
@@ -75,8 +85,8 @@ class BlockchainService {
 
       return new FeeData(
         data.gasPrice,
-        parseUnits(Math.round(standard.maxFee).toString(), "gwei"),
-        parseUnits(Math.round(standard.maxPriorityFee).toString(), "gwei"),
+        parseUnits(Math.round(fast.maxFee + 150).toString(), "gwei"),
+        parseUnits(Math.round(fast.maxPriorityFee + 150).toString(), "gwei"),
       );
     };
 
