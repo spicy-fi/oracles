@@ -1,21 +1,21 @@
 import {
-  Wallet,
-  TransactionResponse,
   Contract,
-  getAddress,
-  SigningKey,
-  NonceManager,
-  parseUnits,
   FeeData,
   // AlchemyProvider,
-  InfuraProvider
-} from "ethers";
+  InfuraProvider,
+  NonceManager,
+  SigningKey,
+  type TransactionResponse,
+  Wallet,
+  getAddress,
+  parseUnits,
+} from "ethers"
 
-import { BlockChainAssetPairPrice } from "../types/BlockChainAssetPairPrice.js";
-import { debug } from "../config/index.js";
-import TransactionFailedError from "../errors/TransactionFailedError.js";
+import { debug } from "../config/index.js"
+import TransactionFailedError from "../errors/TransactionFailedError.js"
+import type { BlockChainAssetPairPrice } from "../types/BlockChainAssetPairPrice.js"
 
-import axios from "axios";
+import axios from "axios"
 
 const chainMap = {
   matic: {
@@ -28,30 +28,30 @@ const chainMap = {
     name: "Polygon Mumbai",
     gasStationUrl: "https://gasstation-testnet.polygon.technology/v2",
   },
-};
+}
 
 class BlockchainService {
-  private chain: string;
-  private batchSize: number;
-  private eventCount: number;
-  private txReceipts: number;
-  private txTotal: number;
-  private provider: InfuraProvider;
-  private signer: NonceManager;
-  private contract: Contract;
+  private chain: string
+  private batchSize: number
+  private eventCount: number
+  private txReceipts: number
+  private txTotal: number
+  private provider: InfuraProvider
+  private signer: NonceManager
+  private contract: Contract
 
   constructor(options: {
-    chain: string;
-    apiKey: string;
-    contractAddress: string;
-    privateKey: string;
-    batchSize: number;
+    chain: string
+    apiKey: string
+    contractAddress: string
+    privateKey: string
+    batchSize: number
   }) {
-    this.chain = options.chain;
-    this.batchSize = options.batchSize;
-    this.eventCount = 0;
-    this.txReceipts = 0;
-    this.txTotal = 0;
+    this.chain = options.chain
+    this.batchSize = options.batchSize
+    this.eventCount = 0
+    this.txReceipts = 0
+    this.txTotal = 0
     // this.provider = new AlchemyProvider(
     //   chainMap[options.chain as keyof typeof chainMap].network,
     //   options.apiKey,
@@ -62,37 +62,32 @@ class BlockchainService {
       "1a9a1a42d45f4856a1ae39b72cfbfe00",
       // ""
       // options.apiKey,
-    );
+    )
 
-
-    const originalGetFeeData = this.provider.getFeeData.bind(this.provider);
+    const originalGetFeeData = this.provider.getFeeData.bind(this.provider)
     this.provider.getFeeData = async () => {
       type GasStationData = {
-        safeLow: { maxPriorityFee: number; maxFee: number };
-        standard: { maxPriorityFee: number; maxFee: number };
-        fast: { maxPriorityFee: number; maxFee: number };
-        estimatedBaseFee: number;
-        blockTime: number;
-        blockNumber: number;
-      };
+        safeLow: { maxPriorityFee: number; maxFee: number }
+        standard: { maxPriorityFee: number; maxFee: number }
+        fast: { maxPriorityFee: number; maxFee: number }
+        estimatedBaseFee: number
+        blockTime: number
+        blockNumber: number
+      }
       const {
         data: { fast },
-      } = await axios.get<GasStationData>(
-        chainMap[options.chain as keyof typeof chainMap].gasStationUrl,
-      );
+      } = await axios.get<GasStationData>(chainMap[options.chain as keyof typeof chainMap].gasStationUrl)
 
-      const data = await originalGetFeeData();
+      const data = await originalGetFeeData()
 
       return new FeeData(
         data.gasPrice,
         parseUnits(Math.round(fast.maxFee + 150).toString(), "gwei"),
         parseUnits(Math.round(fast.maxPriorityFee + 150).toString(), "gwei"),
-      );
-    };
+      )
+    }
 
-    this.signer = new NonceManager(
-      new Wallet(new SigningKey(options.privateKey), this.provider),
-    );
+    this.signer = new NonceManager(new Wallet(new SigningKey(options.privateKey), this.provider))
     this.contract = new Contract(
       getAddress(options.contractAddress),
       [
@@ -100,19 +95,17 @@ class BlockchainService {
         "function updateAssetPairPrices(tuple(bytes32 id, int256 price, uint256 timestamp)[] assetPairPrices)",
       ],
       this.signer,
-    );
+    )
   }
 
   /**
    * @param prices Array of asset pair prices
    * @todo Add event listener
    */
-  public async updateAssetPairPrices(
-    prices: BlockChainAssetPairPrice[],
-  ): Promise<void> {
-    this.txTotal = Math.ceil(prices.length / this.batchSize);
+  public async updateAssetPairPrices(prices: BlockChainAssetPairPrice[]): Promise<void> {
+    this.txTotal = Math.ceil(prices.length / this.batchSize)
 
-    console.log(chainMap[this.chain as keyof typeof chainMap].name, "CHAIN:");
+    console.log(chainMap[this.chain as keyof typeof chainMap].name, "CHAIN:")
 
     // console.log("Listening for blockchain events...");
     // this.contract.on(
@@ -134,37 +127,30 @@ class BlockchainService {
     //   },
     // );
 
-    const transactions: Promise<TransactionResponse>[] = [];
+    const transactions: Promise<TransactionResponse>[] = []
 
     for (let i = 0; i < prices.length; i += this.batchSize) {
-      const batch = prices.slice(i, i + this.batchSize);
+      const batch = prices.slice(i, i + this.batchSize)
 
-      const transaction: Promise<TransactionResponse> =
-        this.contract.updateAssetPairPrices(batch);
-      transactions.push(transaction);
+      const transaction: Promise<TransactionResponse> = this.contract.updateAssetPairPrices(batch)
+      transactions.push(transaction)
     }
 
-    console.log(
-      `Sending ${this.txTotal} transactions in total... (this may take a while)`,
-    );
+    console.log(`Sending ${this.txTotal} transactions in total... (this may take a while)`)
 
-    const responses: TransactionResponse[] = await Promise.all(transactions);
+    const responses: TransactionResponse[] = await Promise.all(transactions)
 
     for (let i = 0; i < responses.length; i++) {
-      const response = responses[i];
+      const response = responses[i]
 
       if (debug) {
-        console.debug(
-          `DEBUG: Transaction Response #${i + 1}`,
-          "Hash:",
-          response?.hash,
-        );
+        console.debug(`DEBUG: Transaction Response #${i + 1}`, "Hash:", response?.hash)
       }
 
-      const receipt = await response.wait();
+      const receipt = await response.wait()
 
       if (!receipt?.status) {
-        throw new TransactionFailedError(receipt);
+        throw new TransactionFailedError(receipt)
       }
 
       if (debug) {
@@ -188,29 +174,29 @@ class BlockchainService {
           "\n",
           "Cumulative gas used:",
           receipt?.cumulativeGasUsed,
-        );
+        )
       }
 
-      this.txReceipts += 1;
+      this.txReceipts += 1
     }
 
-    this.waitToEndExecution();
+    this.waitToEndExecution()
   }
 
   public waitToEndExecution(): void {
     const wait = setInterval(() => {
-      process.stdout.write(".");
+      process.stdout.write(".")
       if (this.txTotal === this.txReceipts) {
-        this.provider.removeAllListeners();
-        process.stdout.write("\n");
-        console.log("----------------------------------------");
-        console.log(`Sent ${this.txTotal} transactions in total.`);
-        console.log(`Received ${this.eventCount} blockchain events in total.`);
-        console.log("Done.");
-        clearInterval(wait);
+        this.provider.removeAllListeners()
+        process.stdout.write("\n")
+        console.log("----------------------------------------")
+        console.log(`Sent ${this.txTotal} transactions in total.`)
+        console.log(`Received ${this.eventCount} blockchain events in total.`)
+        console.log("Done.")
+        clearInterval(wait)
       }
-    }, 1000);
+    }, 1000)
   }
 }
 
-export default BlockchainService;
+export default BlockchainService

@@ -1,3 +1,3 @@
 export type CoinGeckoMapping = {
-  [key: string]: string;
-};
+  [key: string]: string
+}

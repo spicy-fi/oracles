@@ -1,9 +1,9 @@
-import CustomError from "./CustomError.js";
+import CustomError from "./CustomError.js"
 
 class UnexpectedResponseError extends CustomError {
   constructor(message = "Unexpected response") {
-    super(message);
+    super(message)
   }
 }
 
-export default UnexpectedResponseError;
+export default UnexpectedResponseError

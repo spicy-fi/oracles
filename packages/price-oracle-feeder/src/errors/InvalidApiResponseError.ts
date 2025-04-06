@@ -1,9 +1,9 @@
-import CustomError from "./CustomError.js";
+import CustomError from "./CustomError.js"
 
 class InvalidApiResponseError extends CustomError {
   constructor(message = "Invalid API response") {
-    super(message);
+    super(message)
   }
 }
 
-export default InvalidApiResponseError;
+export default InvalidApiResponseError

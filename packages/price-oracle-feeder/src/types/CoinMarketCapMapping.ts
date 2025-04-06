@@ -1,3 +1,3 @@
 export type CoinMarketCapMapping = {
-  [key: string]: number;
-};
+  [key: string]: number
+}

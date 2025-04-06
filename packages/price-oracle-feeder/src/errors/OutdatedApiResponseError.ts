@@ -1,9 +1,9 @@
-import CustomError from "./CustomError.js";
+import CustomError from "./CustomError.js"
 
 class OutdatedApiResponseError extends CustomError {
   constructor(message = "API response is outdated") {
-    super(message);
+    super(message)
   }
 }
 
-export default OutdatedApiResponseError;
+export default OutdatedApiResponseError

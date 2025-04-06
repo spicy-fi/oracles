@@ -1,16 +1,16 @@
-import { assets } from "../config/index.js";
-import { Asset } from "../types/index.js";
+import { assets } from "../config/index.js"
+import type { Asset } from "../types/index.js"
 
 export function getAssetById(id: string): Asset {
-  const asset = assets.find((asset) => asset.id === id);
+  const asset = assets.find((asset) => asset.id === id)
 
   if (asset === undefined) {
-    throw new Error(`Asset with id ${id} not found`);
+    throw new Error(`Asset with id ${id} not found`)
   }
 
-  return asset;
+  return asset
 }
 
 export function getAssetSymbolById(id: string): string {
-  return getAssetById(id).symbol;
+  return getAssetById(id).symbol
 }

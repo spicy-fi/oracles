@@ -1,6 +1,6 @@
-import { AssetPair } from "./AssetPair.js";
+import type { AssetPair } from "./AssetPair.js"
 
 export type AssetPairPrice = AssetPair & {
-  price: number;
-  timestamp: number;
-};
+  price: number
+  timestamp: number
+}

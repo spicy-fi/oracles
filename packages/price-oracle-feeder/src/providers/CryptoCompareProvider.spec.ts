@@ -1,12 +1,12 @@
-import { UnexpectedResponseError } from "../errors/index.js";
-import { AssetPair } from "../types/index.js";
-import CryptoCompareProvider from "./CryptoCompareProvider.js";
-import nock from "nock";
-import { jest } from "@jest/globals";
+import { jest } from "@jest/globals"
+import nock from "nock"
+import { UnexpectedResponseError } from "../errors/index.js"
+import type { AssetPair } from "../types/index.js"
+import CryptoCompareProvider from "./CryptoCompareProvider.js"
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: i had to do this to make the test work
 const setupNock = (statusCode: number, response: any): void => {
-  nock.cleanAll();
+  nock.cleanAll()
 
   nock("https://min-api.cryptocompare.com", {
     reqheaders: {
@@ -19,32 +19,32 @@ const setupNock = (statusCode: number, response: any): void => {
       tsyms: "USD",
       extraParams: "spicy-price-oracle-fetcher",
     })
-    .reply(statusCode, response);
-};
+    .reply(statusCode, response)
+}
 
 describe("CryptoCompareProvider", () => {
-  let cryptoCompareProvider: CryptoCompareProvider;
-  let pairs: AssetPair[];
+  let cryptoCompareProvider: CryptoCompareProvider
+  let pairs: AssetPair[]
 
   beforeEach(() => {
-    cryptoCompareProvider = new CryptoCompareProvider();
+    cryptoCompareProvider = new CryptoCompareProvider()
     pairs = [
       { id: 1, baseAssetId: "bitcoin", quoteAssetId: "united-states-dollar" },
       { id: 2, baseAssetId: "ethereum", quoteAssetId: "united-states-dollar" },
-    ];
+    ]
 
     setupNock(200, {
       BTC: { USD: "60000.00" },
       ETH: { USD: "2000.00" },
-    });
-  });
+    })
+  })
 
   afterEach(() => {
-    jest.clearAllMocks();
-  });
+    jest.clearAllMocks()
+  })
 
   it("should fetch prices", async () => {
-    const prices = await cryptoCompareProvider.fetchPrices(pairs);
+    const prices = await cryptoCompareProvider.fetchPrices(pairs)
 
     expect(prices).toEqual([
       {
@@ -61,14 +61,14 @@ describe("CryptoCompareProvider", () => {
         price: "2000.00",
         timestamp: expect.any(Number),
       },
-    ]);
-  });
+    ])
+  })
 
   it("should cache and return prices from cache", async () => {
-    await cryptoCompareProvider.fetchPrices(pairs);
-    nock.cleanAll();
+    await cryptoCompareProvider.fetchPrices(pairs)
+    nock.cleanAll()
 
-    const prices = await cryptoCompareProvider.fetchPrices(pairs);
+    const prices = await cryptoCompareProvider.fetchPrices(pairs)
     expect(prices).toEqual([
       {
         id: 1,
@@ -84,31 +84,27 @@ describe("CryptoCompareProvider", () => {
         price: "2000.00",
         timestamp: expect.any(Number),
       },
-    ]);
-  });
+    ])
+  })
 
   it("should handle API errors", async () => {
-    nock.cleanAll();
+    nock.cleanAll()
 
-    setupNock(500, "something awful happened");
+    setupNock(500, "something awful happened")
 
-    await expect(cryptoCompareProvider.fetchPrices(pairs)).rejects.toThrow(
-      "Request failed with status code 500",
-    );
-  });
+    await expect(cryptoCompareProvider.fetchPrices(pairs)).rejects.toThrow("Request failed with status code 500")
+  })
 
   it("should handle unexpected response data", async () => {
-    nock.cleanAll();
+    nock.cleanAll()
 
-    setupNock(200, { BTC: {} });
+    setupNock(200, { BTC: {} })
 
-    await expect(cryptoCompareProvider.fetchPrices(pairs)).rejects.toThrow(
-      UnexpectedResponseError,
-    );
-  });
+    await expect(cryptoCompareProvider.fetchPrices(pairs)).rejects.toThrow(UnexpectedResponseError)
+  })
 
   it("should return an empty array if no pairs are provided", async () => {
-    const prices = await cryptoCompareProvider.fetchPrices([]);
-    expect(prices).toEqual([]);
-  });
-});
+    const prices = await cryptoCompareProvider.fetchPrices([])
+    expect(prices).toEqual([])
+  })
+})

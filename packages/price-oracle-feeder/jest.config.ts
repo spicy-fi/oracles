@@ -1,7 +1,7 @@
-import "dotenv/config";
-import type { JestConfigWithTsJest } from "ts-jest";
+import "dotenv/config"
+import type { JestConfigWithTsJest } from "ts-jest"
 
-const isCI = process.env.CI === "true";
+const isCI = process.env.CI === "true"
 
 const jestConfig: JestConfigWithTsJest = {
   resetModules: true,
@@ -23,13 +23,8 @@ const jestConfig: JestConfigWithTsJest = {
     ],
   },
   coverageDirectory: "coverage",
-  collectCoverageFrom: [
-    "src/**/*.ts",
-    "src/**/*.mts",
-    "!src/**/*.d.ts",
-    "!src/**/*.d.mts",
-  ],
+  collectCoverageFrom: ["src/**/*.ts", "src/**/*.mts", "!src/**/*.d.ts", "!src/**/*.d.mts"],
   coverageReporters: isCI ? ["json"] : ["text"],
-};
+}
 
-export default jestConfig;
+export default jestConfig

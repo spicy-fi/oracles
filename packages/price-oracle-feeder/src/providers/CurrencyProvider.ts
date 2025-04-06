@@ -1,7 +1,7 @@
-import { AssetPairPrice } from "../types/AssetPairPrice.js";
+import type { AssetPairPrice } from "../types/AssetPairPrice.js"
 
 export default interface CurrencyProvider {
-  name: string;
-  url: string;
-  cache: Map<string, AssetPairPrice[]>;
+  name: string
+  url: string
+  cache: Map<string, AssetPairPrice[]>
 }

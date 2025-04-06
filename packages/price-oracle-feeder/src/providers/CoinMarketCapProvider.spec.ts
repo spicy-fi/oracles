@@ -1,12 +1,12 @@
-import { providerCoinMarketCapApiKey } from "../config/index.js";
-import { AssetPair } from "../types/index.js";
-import CoinMarketCapProvider from "./CoinMarketCapProvider.js";
-import nock from "nock";
-import { jest } from "@jest/globals";
+import { jest } from "@jest/globals"
+import nock from "nock"
+import { providerCoinMarketCapApiKey } from "../config/index.js"
+import type { AssetPair } from "../types/index.js"
+import CoinMarketCapProvider from "./CoinMarketCapProvider.js"
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: i had to do this to make the test work
 const setupNock = (statusCode: number, response: any): void => {
-  nock.cleanAll();
+  nock.cleanAll()
 
   nock("https://pro-api.coinmarketcap.com/v2", {
     reqheaders: {
@@ -15,19 +15,19 @@ const setupNock = (statusCode: number, response: any): void => {
   })
     .get("/cryptocurrency/quotes/latest")
     .query({ id: "1,1027", aux: "is_active" })
-    .reply(statusCode, response);
-};
+    .reply(statusCode, response)
+}
 
 describe("CoinMarketCapProvider", () => {
-  let coinMarketCapProvider: CoinMarketCapProvider;
-  let pairs: AssetPair[];
+  let coinMarketCapProvider: CoinMarketCapProvider
+  let pairs: AssetPair[]
 
   beforeEach(() => {
-    coinMarketCapProvider = new CoinMarketCapProvider();
+    coinMarketCapProvider = new CoinMarketCapProvider()
     pairs = [
       { id: 1, baseAssetId: "bitcoin", quoteAssetId: "united-states-dollar" },
       { id: 2, baseAssetId: "ethereum", quoteAssetId: "united-states-dollar" },
-    ];
+    ]
 
     setupNock(200, {
       data: {
@@ -50,15 +50,15 @@ describe("CoinMarketCapProvider", () => {
           },
         },
       },
-    });
-  });
+    })
+  })
 
   afterEach(() => {
-    jest.clearAllMocks();
-  });
+    jest.clearAllMocks()
+  })
 
   it("should fetch prices", async () => {
-    const prices = await coinMarketCapProvider.fetchPrices(pairs);
+    const prices = await coinMarketCapProvider.fetchPrices(pairs)
     expect(prices).toEqual([
       {
         id: 1,
@@ -74,14 +74,14 @@ describe("CoinMarketCapProvider", () => {
         price: 2000,
         timestamp: 1684195200000,
       },
-    ]);
-  });
+    ])
+  })
 
   it("should cache and return prices from cache", async () => {
-    await coinMarketCapProvider.fetchPrices(pairs);
-    nock.cleanAll();
+    await coinMarketCapProvider.fetchPrices(pairs)
+    nock.cleanAll()
 
-    const prices = await coinMarketCapProvider.fetchPrices(pairs);
+    const prices = await coinMarketCapProvider.fetchPrices(pairs)
     expect(prices).toEqual([
       {
         id: 1,
@@ -97,18 +97,16 @@ describe("CoinMarketCapProvider", () => {
         price: 2000,
         timestamp: 1684195200000,
       },
-    ]);
-  });
+    ])
+  })
 
   it("should handle API errors", async () => {
-    setupNock(500, "something awful happened");
-    await expect(coinMarketCapProvider.fetchPrices(pairs)).rejects.toThrow(
-      "Request failed with status code 500",
-    );
-  });
+    setupNock(500, "something awful happened")
+    await expect(coinMarketCapProvider.fetchPrices(pairs)).rejects.toThrow("Request failed with status code 500")
+  })
 
   it("should return an empty array if no pairs are provided", async () => {
-    const prices = await coinMarketCapProvider.fetchPrices([]);
-    expect(prices).toEqual([]);
-  });
-});
+    const prices = await coinMarketCapProvider.fetchPrices([])
+    expect(prices).toEqual([])
+  })
+})

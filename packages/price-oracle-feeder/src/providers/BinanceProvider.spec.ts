@@ -1,42 +1,42 @@
-import { UnexpectedResponseError } from "../errors/index.js";
-import { AssetPair } from "../types/index.js";
-import BinanceProvider from "./BinanceProvider.js";
-import nock from "nock";
-import { jest } from "@jest/globals";
+import { jest } from "@jest/globals"
+import nock from "nock"
+import { UnexpectedResponseError } from "../errors/index.js"
+import type { AssetPair } from "../types/index.js"
+import BinanceProvider from "./BinanceProvider.js"
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: i had to do this to make the test work
 const setupNock = (statusCode: number, response: any): void => {
-  nock.cleanAll();
+  nock.cleanAll()
 
   nock("https://api.binance.com")
     .get("/api/v3/ticker/price")
     .query({ symbols: "BTCUSD,ETHUSD" })
-    .reply(statusCode, response);
-};
+    .reply(statusCode, response)
+}
 
 describe("BinanceProvider", () => {
-  let binanceProvider: BinanceProvider;
-  let pairs: AssetPair[];
+  let binanceProvider: BinanceProvider
+  let pairs: AssetPair[]
 
   beforeEach(() => {
-    binanceProvider = new BinanceProvider();
+    binanceProvider = new BinanceProvider()
     pairs = [
       { id: 1, baseAssetId: "bitcoin", quoteAssetId: "united-states-dollar" },
       { id: 2, baseAssetId: "ethereum", quoteAssetId: "united-states-dollar" },
-    ];
+    ]
 
     setupNock(200, [
       { symbol: "BTCUSD", price: 60000 },
       { symbol: "ETHUSD", price: 2000 },
-    ]);
-  });
+    ])
+  })
 
   afterEach(() => {
-    jest.clearAllMocks();
-  });
+    jest.clearAllMocks()
+  })
 
   it("should fetch prices", async () => {
-    const prices = await binanceProvider.fetchPrices(pairs);
+    const prices = await binanceProvider.fetchPrices(pairs)
 
     expect(prices).toEqual([
       {
@@ -53,14 +53,14 @@ describe("BinanceProvider", () => {
         price: 2000,
         timestamp: expect.any(Number),
       },
-    ]);
-  });
+    ])
+  })
 
   it("should cache and return prices from cache", async () => {
-    await binanceProvider.fetchPrices(pairs);
-    nock.cleanAll();
+    await binanceProvider.fetchPrices(pairs)
+    nock.cleanAll()
 
-    const prices = await binanceProvider.fetchPrices(pairs);
+    const prices = await binanceProvider.fetchPrices(pairs)
     expect(prices).toEqual([
       {
         id: 1,
@@ -76,25 +76,21 @@ describe("BinanceProvider", () => {
         price: 2000,
         timestamp: expect.any(Number),
       },
-    ]);
-  });
+    ])
+  })
 
   it("should handle API errors", async () => {
-    setupNock(500, "something awful happened");
-    await expect(binanceProvider.fetchPrices(pairs)).rejects.toThrow(
-      "Request failed with status code 500",
-    );
-  });
+    setupNock(500, "something awful happened")
+    await expect(binanceProvider.fetchPrices(pairs)).rejects.toThrow("Request failed with status code 500")
+  })
 
   it("should handle unexpected response data", async () => {
-    setupNock(200, [{ symbol: "BTCUSD" }]); // price field is missing
-    await expect(binanceProvider.fetchPrices(pairs)).rejects.toThrow(
-      UnexpectedResponseError,
-    );
-  });
+    setupNock(200, [{ symbol: "BTCUSD" }]) // price field is missing
+    await expect(binanceProvider.fetchPrices(pairs)).rejects.toThrow(UnexpectedResponseError)
+  })
 
   it("should return an empty array if no pairs are provided", async () => {
-    const prices = await binanceProvider.fetchPrices([]);
-    expect(prices).toEqual([]);
-  });
-});
+    const prices = await binanceProvider.fetchPrices([])
+    expect(prices).toEqual([])
+  })
+})
