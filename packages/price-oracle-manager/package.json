@@ -14,6 +14,6 @@
     "synthetix-v3": "github:spicy-fi/synthetix-v3"
   },
   "dependencies": {
-    "dotenv": "^16.1.3"
+    "dotenv": "^17.0.0"
   }
 }
